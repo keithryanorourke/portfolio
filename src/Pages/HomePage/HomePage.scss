@@ -1,0 +1,14 @@
+@use '../../styles/partials/animations' as *;
+
+.home {
+
+  &__copy::after {
+    content: "";
+    display: inline-block;
+    background-color: #111;
+    margin-left: 0.1rem;
+    width: .075rem;
+    height: 1rem;
+    animation: blink 1s infinite;
+  }
+}
