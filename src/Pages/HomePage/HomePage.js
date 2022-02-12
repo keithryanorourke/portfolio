@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import "./HomePage.scss"
 import SectionTitle from "../../components/SectionTitle/SectionTitle"
 import ProjectsSection from "../../components/ProjectsSection/ProjectsSection"
+import ContactSection from "../../components/ContactSection/ContactSection"
 
 const HomePage = () => {
   const timeOutArray = []
@@ -126,6 +127,7 @@ const HomePage = () => {
         }
       </section>
       <ProjectsSection />
+      <ContactSection />
     </>
   )
 }
