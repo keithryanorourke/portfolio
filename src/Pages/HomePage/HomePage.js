@@ -110,7 +110,7 @@ const HomePage = () => {
             <span className="about__code about__code--single-indent"><span className="about__declaration">if</span>{"(!bool) {"}</span>
             <span className="about__code about__code--double-indent">alert('Lies!!')</span>
             <span className="about__code about__code--single-indent">{"}"}<span className="about__declaration"> else</span> {"{"}</span>
-            <span className="about__code about__code--double-indent">console.<span className="about__function">log</span>{"(`My name is ${nameStr} and I am a ${typeStr} web developer!`)"}</span>
+            <span className="about__code about__code--double-indent">console.<span className="about__function">log</span>{"(`Hello!\\nMy name is ${nameStr} and I am a ${typeStr} web developer!`)"}</span>
             <span className="about__code about__code--single-indent">{"}"}</span>
             <span className="about__code">{"}"}</span>
           </div>
