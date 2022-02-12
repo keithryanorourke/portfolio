@@ -2,4 +2,9 @@
 
 .projects {
   @include section-padding;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
 }

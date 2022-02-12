@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import "./HomePage.scss"
+import SectionTitle from "../../components/SectionTitle/SectionTitle"
 import ProjectsSection from "../../components/ProjectsSection/ProjectsSection"
 
 const HomePage = () => {
@@ -45,7 +46,7 @@ const HomePage = () => {
     // timeOutArray.push(setTimeout(() => {
       const firstSentence = animateString("", `My name is ${nameInput.value || "(Hm... Seems like someone left a field empty!)"} and I'm a ${developerInput.value || "(Hm... Seems like someone left a field empty!)"} web developer!`, setBodyText, 15)
       timeOutArray.push(setTimeout(() => {
-        animateString(firstSentence.newContent, "\nI love collaboration and I'm very passionate about education and professional growth!", setBodyText, 15)
+        animateString(firstSentence.newContent, "\nMy favorite thing about web development is the plethora of opportunities to collaborate, and I'm very passionate about technology education and professional growth!", setBodyText, 15)
       }, firstSentence.time + 300))
     // }, title.time + 150))
   }
@@ -70,7 +71,7 @@ const HomePage = () => {
   return (
     <>
       <section className="about">
-        <h2 className="about__title">About Me</h2>
+        <SectionTitle title='About Me' />
         {!showText ? 
         <form onSubmit={submitHandler} className="about__codebox">
           <label className="about__code-label"><span className="about__declaration">const</span> myName = <div className="about__input-wrapper">"

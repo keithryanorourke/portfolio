@@ -1,10 +1,21 @@
 import './ProjectsSection.scss'
+import liftBookThumbnail from "../../assets/liftBookCapture.png"
+import IndividualProject from '../IndividualProject/IndividualProject'
+import SectionTitle from '../SectionTitle/SectionTitle'
 
 const ProjectsSection = () => {
   return (
     <section className="projects">
-      <h2 className="projects__title">Projects</h2>
+      <SectionTitle title='Projects' />
+      <div className="projects__container">
+        <IndividualProject
+          thumbnail={liftBookThumbnail}
+          link='https://liftbook.ca'
+          name='liftBook'
+        />
+      </div>
     </section>
+    
   )
 }
 

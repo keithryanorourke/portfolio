@@ -1,0 +1,13 @@
+@use "../../styles/partials/mixins" as *;
+
+.single-project {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  height: 30rem;
+  overflow: hidden;
+
+  &__thumbnail {
+    width: 100%;
+  }
+}
