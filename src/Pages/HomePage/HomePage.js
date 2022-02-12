@@ -33,25 +33,31 @@ const HomePage = () => {
       i++
       if(i >=content.length) {
         clearInterval(stringAnimation)
-        setTextCursor(nextCursor || 'title')
+        setTextCursor(prevState => nextCursor || prevState)
       }
     }, interval)
     return {newContent: initialState + content, time: interval*content.length}
   }
 
-  // Mounting useEffect to animate page text
-  // useEffect(() => {
-    const renderText = () => {
-
-      const title = animateString("", "Hello!", setTitleText, 50, 'p1')
+  const renderText = () => {
+    const title = animateString("", "Hello!", setTitleText, 50, 'p1')
+    timeOutArray.push(setTimeout(() => {
+      const firstSentence = animateString("", `My name is ${nameInput.value || "(Hm... Seems like someone left a field empty!)"} and I'm a ${developerInput.value || "(Hm... Seems like someone left a field empty!)"} web developer!`, setBodyText, 20)
       timeOutArray.push(setTimeout(() => {
-        const firstSentence = animateString("", "My name is Keith Ryan O'Rourke and I'm a full stack web developer!", setBodyText, 20)
-        timeOutArray.push(setTimeout(() => {
-          animateString(firstSentence.newContent, "\nI love collaboration and I'm very passionate about education and professional growth!", setBodyText, 20)
-        }, firstSentence.time + 500))
-      }, title.time + 150))
+        animateString(firstSentence.newContent, "\nI love collaboration and I'm very passionate about education and professional growth!", setBodyText, 20)
+      }, firstSentence.time + 500))
+    }, title.time + 150))
+  }
+
+  const submitHandler = (e) => {
+    e.preventDefault()
+    if(e.target.love.value !== 'true') {
+      alert('Lies!!')
+    } else {
+      setShowText(true)
+      renderText()
     }
-  // }, [])
+  }
 
   // Cleanup useEffect in case user leaves page before text animations complete
   useEffect(() => () => {
@@ -62,7 +68,8 @@ const HomePage = () => {
 
   return (
     <section className="home">
-      <form className="home__codebox">
+      {!showText ? 
+      <form onSubmit={submitHandler} className="home__codebox">
         <label className="home__code-label"><span className="home__declaration">const</span> myName = <div className="home__input-wrapper">"
           <input 
             type="text" 
@@ -71,7 +78,7 @@ const HomePage = () => {
             name="myName" 
             value={nameInput.value} 
             className="home__input" 
-          />
+            />
         "</div></label>
         <label className="home__code-label"><span className="home__declaration">const</span> type = <div className="home__input-wrapper">"
           <input 
@@ -81,7 +88,7 @@ const HomePage = () => {
             name="developer" 
             value={developerInput.value} 
             className="home__input" 
-          />
+            />
         "</div></label>
         <label className="home__code-label"><span className="home__declaration">const</span> lovesCollaboration = <div className="home__input-wrapper">
           <input 
@@ -91,7 +98,7 @@ const HomePage = () => {
             name="love" 
             value={loveInput.value} 
             className="home__input" 
-          />
+            />
         </div></label>
         <div className="home__myPortfolio-container">
           <span className="home__code"><span className="home__declaration">const</span><span className="home__function"> myPortfolio</span>{" = (string1, string2, bool) => {"}</span>
@@ -105,12 +112,12 @@ const HomePage = () => {
         <span className="home__code"><span className="home__function">myPortfolio</span>(myName, type, lovesCollaboration)</span>
         <button className="home__submit">RUN</button>
       </form>
-      {showText ? 
+      : 
       <>
         <h1 className="home__title">{titleText}{textCursor === 'title' ? <div className="home__text-cursor"></div> : ""}</h1>
         <p className="home__copy">{bodyText}{textCursor === 'p1' ? <div className="home__text-cursor"></div> : ""}</p>
       </>
-      : null}
+      }
     </section>
   )
 }
