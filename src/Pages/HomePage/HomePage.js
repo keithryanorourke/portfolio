@@ -101,11 +101,11 @@ const HomePage = () => {
             />
         </div></label>
         <div className="home__myPortfolio-container">
-          <span className="home__code"><span className="home__declaration">const</span><span className="home__function"> myPortfolio</span>{" = (string1, string2, bool) => {"}</span>
+          <span className="home__code"><span className="home__declaration">const</span><span className="home__function"> myPortfolio</span>{" = (nameStr, typeStr, bool) => {"}</span>
           <span className="home__code home__code--single-indent"><span className="home__declaration">if</span>{"(!bool) {"}</span>
           <span className="home__code home__code--double-indent">alert('Lies!!')</span>
           <span className="home__code home__code--single-indent">{"}"}<span className="home__declaration"> else</span> {"{"}</span>
-          <span className="home__code home__code--double-indent">console.<span className="home__function">log</span>{"(`My name is ${string1} and I am a ${string2} web developer!`)"}</span>
+          <span className="home__code home__code--double-indent">console.<span className="home__function">log</span>{"(`My name is ${nameStr} and I am a ${typeStr} web developer!`)"}</span>
           <span className="home__code home__code--single-indent">{"}"}</span>
           <span className="home__code">{"}"}</span>
         </div>
