@@ -1,0 +1,57 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.single-project {
+  
+  width: 100%;
+  height: 30rem;
+  margin-bottom: 3rem;
+  background-color: #fff;
+  border-radius: .5rem;
+  overflow: hidden;
+  transition: transform 0.2s;
+  &:hover {
+    transform: scale(1.05) translateY(-2.5%);
+  }
+  @include tablet {
+    width: 50%;
+    box-shadow: $darkshadow1;
+  }
+  @include desktop {
+    width: 33%;
+  }
+
+  &__link {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  }
+
+  &__thumbnail {
+    height: 100%;
+    object-fit: cover;
+    @include tablet {
+      padding: 1rem
+    }
+  }
+
+
+  &__title {
+    margin: 0.75rem 1rem 0;
+    color: white;
+    padding: 0.25rem 1rem;
+    background-color: rgb(26, 114, 230);
+    width: fit-content;
+    border-radius: 0.5rem;
+    border-bottom: 3px solid rgb(68, 155, 255);
+    box-shadow: $darkshadow1;
+  }
+
+  &__copy {
+    margin: 0 0 0.5rem;
+    padding: 0.75rem 1rem;
+    word-break: break-all;
+  }
+}

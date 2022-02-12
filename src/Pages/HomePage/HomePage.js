@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react"
 import "./HomePage.scss"
+import SectionTitle from "../../components/SectionTitle/SectionTitle"
+import ProjectsSection from "../../components/ProjectsSection/ProjectsSection"
 
 const HomePage = () => {
   const timeOutArray = []
   const [titleText, setTitleText] = useState("")
-  const [bodyText, setBodyText] = useState("")
+  const [p1Text, setP1Text] = useState("")
+  const [p2Text, setP2Text] = useState("")
   const [textCursor, setTextCursor] = useState('title')
   const [showText, setShowText] = useState(false)
   const [nameInput, setNameInput] = useState({value: "Keith Ryan O'Rourke", length: 19, style: {width: "19ch"}}) 
@@ -42,11 +45,11 @@ const HomePage = () => {
   const renderText = () => {
     const title = animateString("", "Hello!", setTitleText, 50, 'p1')
     timeOutArray.push(setTimeout(() => {
-      const firstSentence = animateString("", `My name is ${nameInput.value || "(Hm... Seems like someone left a field empty!)"} and I'm a ${developerInput.value || "(Hm... Seems like someone left a field empty!)"} web developer!`, setBodyText, 20)
+      const firstSentence = animateString("", `My name is ${nameInput.value || "(Hm... Seems like someone left a field empty!)"} and I'm a ${developerInput.value || "(Hm... Seems like someone left a field empty!)"} web developer!`, setP1Text, 25, 'p2')
       timeOutArray.push(setTimeout(() => {
-        animateString(firstSentence.newContent, "\nI love collaboration and I'm very passionate about education and professional growth!", setBodyText, 20)
+        animateString("", "\nMy favorite thing about web development is the plethora of opportunities to collaborate with others. I'm very passionate about technology education and professional growth!", setP2Text, 25)
       }, firstSentence.time + 500))
-    }, title.time + 150))
+    }, title.time + 300))
   }
 
   const submitHandler = (e) => {
@@ -67,58 +70,63 @@ const HomePage = () => {
   }, [])
 
   return (
-    <section className="home">
-      {!showText ? 
-      <form onSubmit={submitHandler} className="home__codebox">
-        <label className="home__code-label"><span className="home__declaration">const</span> myName = <div className="home__input-wrapper">"
-          <input 
-            type="text" 
-            style={nameInput.style} 
-            onChange={(e) => inputChangeHandler(e, setNameInput)} 
-            name="myName" 
-            value={nameInput.value} 
-            className="home__input" 
-            />
-        "</div></label>
-        <label className="home__code-label"><span className="home__declaration">const</span> type = <div className="home__input-wrapper">"
-          <input 
-            type="text" 
-            style={developerInput.style} 
-            onChange={(e) => inputChangeHandler(e, setDeveloperInput)} 
-            name="developer" 
-            value={developerInput.value} 
-            className="home__input" 
-            />
-        "</div></label>
-        <label className="home__code-label"><span className="home__declaration">const</span> lovesCollaboration = <div className="home__input-wrapper">
-          <input 
-            type="text" 
-            style={loveInput.style} 
-            onChange={(e) => inputChangeHandler(e, setLoveInput)} 
-            name="love" 
-            value={loveInput.value} 
-            className="home__input" 
-            />
-        </div></label>
-        <div className="home__myPortfolio-container">
-          <span className="home__code"><span className="home__declaration">const</span><span className="home__function"> myPortfolio</span>{" = (nameStr, typeStr, bool) => {"}</span>
-          <span className="home__code home__code--single-indent"><span className="home__declaration">if</span>{"(!bool) {"}</span>
-          <span className="home__code home__code--double-indent">alert('Lies!!')</span>
-          <span className="home__code home__code--single-indent">{"}"}<span className="home__declaration"> else</span> {"{"}</span>
-          <span className="home__code home__code--double-indent">console.<span className="home__function">log</span>{"(`My name is ${nameStr} and I am a ${typeStr} web developer!`)"}</span>
-          <span className="home__code home__code--single-indent">{"}"}</span>
-          <span className="home__code">{"}"}</span>
+    <>
+      <section className="about">
+        <SectionTitle title='About Me' />
+        {!showText ? 
+        <form onSubmit={submitHandler} className="about__codebox">
+          <label className="about__code-label"><span className="about__declaration">const</span> myName = <div className="about__input-wrapper">"
+            <input 
+              type="text" 
+              style={nameInput.style} 
+              onChange={(e) => inputChangeHandler(e, setNameInput)} 
+              name="myName" 
+              value={nameInput.value} 
+              className="about__input" 
+              />
+          "</div></label>
+          <label className="about__code-label"><span className="about__declaration">const</span> type = <div className="about__input-wrapper">"
+            <input 
+              type="text" 
+              style={developerInput.style} 
+              onChange={(e) => inputChangeHandler(e, setDeveloperInput)} 
+              name="developer" 
+              value={developerInput.value} 
+              className="about__input" 
+              />
+          "</div></label>
+          <label className="about__code-label"><span className="about__declaration">const</span> lovesCollaboration = <div className="about__input-wrapper">
+            <input 
+              type="text" 
+              style={loveInput.style} 
+              onChange={(e) => inputChangeHandler(e, setLoveInput)} 
+              name="love" 
+              value={loveInput.value} 
+              className="about__input" 
+              />
+          </div></label>
+          <div className="about__myPortfolio-container">
+            <span className="about__code"><span className="about__declaration">const</span><span className="about__function"> myPortfolio</span>{" = (nameStr, typeStr, bool) => {"}</span>
+            <span className="about__code about__code--single-indent"><span className="about__declaration">if</span>{"(!bool) {"}</span>
+            <span className="about__code about__code--double-indent">alert('Lies!!')</span>
+            <span className="about__code about__code--single-indent">{"}"}<span className="about__declaration"> else</span> {"{"}</span>
+            <span className="about__code about__code--double-indent">console.<span className="about__function">log</span>{"(`Hello!\\nMy name is ${nameStr} and I am a ${typeStr} web developer!`)"}</span>
+            <span className="about__code about__code--single-indent">{"}"}</span>
+            <span className="about__code">{"}"}</span>
+          </div>
+          <span className="about__code"><span className="about__function">myPortfolio</span>(myName, type, lovesCollaboration)</span>
+          <button className="about__submit">RUN</button>
+        </form>
+        : 
+        <div className="about__codebox">
+          <h3 className="about__subtitle">{titleText}{textCursor === 'title' ? <div className="about__text-cursor"></div> : ""}</h3>
+          <p className="about__copy">{p1Text}{textCursor === 'p1' ? <div className="about__text-cursor"></div> : ""}</p>
+          <p className="about__copy">{p2Text}{textCursor === 'p2' ? <div className="about__text-cursor"></div> : ""}</p>
         </div>
-        <span className="home__code"><span className="home__function">myPortfolio</span>(myName, type, lovesCollaboration)</span>
-        <button className="home__submit">RUN</button>
-      </form>
-      : 
-      <>
-        <h1 className="home__title">{titleText}{textCursor === 'title' ? <div className="home__text-cursor"></div> : ""}</h1>
-        <p className="home__copy">{bodyText}{textCursor === 'p1' ? <div className="home__text-cursor"></div> : ""}</p>
-      </>
-      }
-    </section>
+        }
+      </section>
+      <ProjectsSection />
+    </>
   )
 }
 
