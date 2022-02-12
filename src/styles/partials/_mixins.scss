@@ -13,10 +13,10 @@
 @mixin section-padding {
   padding: 1rem 1.5rem;
   @include tablet {
-    margin: 2rem 3rem;
+    padding: 2rem 3rem;
   }
   @include desktop {
-    margin: 3rem 15%;
+    padding: 3rem 15%;
   }
 }
 

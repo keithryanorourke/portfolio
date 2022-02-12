@@ -1,11 +1,15 @@
 @use "../../styles/partials/mixins" as *;
 
 .title {
-  padding: 3rem 0;
   margin: 0;
+  margin-bottom: 1rem;
   font-size: 2rem;
   line-height: 100%;
   @include tablet {
-    margin-left: 3rem;
+    margin-bottom: 2rem;
+    font-size: 2.25rem;
+  }
+  @include desktop {
+    font-size: 2.5rem;
   }
 }

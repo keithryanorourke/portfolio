@@ -5,9 +5,10 @@ import ProjectsSection from "../../components/ProjectsSection/ProjectsSection"
 
 const HomePage = () => {
   const timeOutArray = []
-  // const [titleText, setTitleText] = useState("")
-  const [bodyText, setBodyText] = useState("")
-  const [textCursor, setTextCursor] = useState('p1')
+  const [titleText, setTitleText] = useState("")
+  const [p1Text, setP1Text] = useState("")
+  const [p2Text, setP2Text] = useState("")
+  const [textCursor, setTextCursor] = useState('title')
   const [showText, setShowText] = useState(false)
   const [nameInput, setNameInput] = useState({value: "Keith Ryan O'Rourke", length: 19, style: {width: "19ch"}}) 
   const [developerInput, setDeveloperInput] = useState({value: "full stack", length: 10, style: {width: "10ch"}}) 
@@ -42,13 +43,13 @@ const HomePage = () => {
   }
 
   const renderText = () => {
-    // const title = animateString("", "Hello!", setTitleText, 50, 'p1')
-    // timeOutArray.push(setTimeout(() => {
-      const firstSentence = animateString("", `My name is ${nameInput.value || "(Hm... Seems like someone left a field empty!)"} and I'm a ${developerInput.value || "(Hm... Seems like someone left a field empty!)"} web developer!`, setBodyText, 15)
+    const title = animateString("", "Hello!", setTitleText, 50, 'p1')
+    timeOutArray.push(setTimeout(() => {
+      const firstSentence = animateString("", `My name is ${nameInput.value || "(Hm... Seems like someone left a field empty!)"} and I'm a ${developerInput.value || "(Hm... Seems like someone left a field empty!)"} web developer!`, setP1Text, 25, 'p2')
       timeOutArray.push(setTimeout(() => {
-        animateString(firstSentence.newContent, "\nMy favorite thing about web development is the plethora of opportunities to collaborate, and I'm very passionate about technology education and professional growth!", setBodyText, 15)
-      }, firstSentence.time + 300))
-    // }, title.time + 150))
+        animateString("", "\nMy favorite thing about web development is the plethora of opportunities to collaborate with others. I'm very passionate about technology education and professional growth!", setP2Text, 25)
+      }, firstSentence.time + 500))
+    }, title.time + 300))
   }
 
   const submitHandler = (e) => {
@@ -117,10 +118,11 @@ const HomePage = () => {
           <button className="about__submit">RUN</button>
         </form>
         : 
-        <>
-          {/* <h3 className="about__title">{titleText}{textCursor === 'title' ? <div className="about__text-cursor"></div> : ""}</h3> */}
-          <p className="about__copy">{bodyText}{textCursor === 'p1' ? <div className="about__text-cursor"></div> : ""}</p>
-        </>
+        <div className="about__codebox">
+          <h3 className="about__subtitle">{titleText}{textCursor === 'title' ? <div className="about__text-cursor"></div> : ""}</h3>
+          <p className="about__copy">{p1Text}{textCursor === 'p1' ? <div className="about__text-cursor"></div> : ""}</p>
+          <p className="about__copy">{p2Text}{textCursor === 'p2' ? <div className="about__text-cursor"></div> : ""}</p>
+        </div>
         }
       </section>
       <ProjectsSection />
