@@ -12,6 +12,7 @@ const ProjectsSection = () => {
           thumbnail={liftBookThumbnail}
           link='https://liftbook.ca'
           name='liftBook'
+          description="liftBook is a full stack workout tracker built primarily using React, Express, and MySQL!"
         />
       </div>
     </section>

@@ -3,11 +3,31 @@
 .single-project {
   display: flex;
   flex-direction: column;
-  width: 20rem;
+  width: 75%;
   height: 30rem;
+  background-color: #fff;
+  border-radius: .5rem;
   overflow: hidden;
+  @include tablet {
+    width: 50%;
+  }
+  @include desktop {
+    width: 33%;
+  }
 
   &__thumbnail {
-    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__title {
+    margin: 0.5rem 1rem 0;
+    border-bottom: #999;
+  }
+
+  &__copy {
+    margin: 0 0 0.5rem;
+    padding: 0.75rem 1rem;
+    word-break: break-all;
   }
 }
