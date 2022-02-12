@@ -18,11 +18,19 @@
   &__thumbnail {
     height: 100%;
     object-fit: cover;
+    @include tablet {
+      padding: 1rem
+    }
   }
 
   &__title {
-    margin: 0.5rem 1rem 0;
-    border-bottom: #999;
+    margin: 0.75rem 1rem 0;
+    color: white;
+    padding: 0.25rem 1rem;
+    background-color: rgb(26, 114, 230);
+    width: fit-content;
+    border-radius: 0.5rem;
+    border-bottom: 3px solid rgb(68, 155, 255);
   }
 
   &__copy {

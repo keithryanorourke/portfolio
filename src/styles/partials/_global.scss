@@ -4,9 +4,10 @@
 
 body {
   margin: 0;
-  background-color: #e1faf1;
+  // background-color: #e1faf1;
+  background: linear-gradient(125deg, #e1faf1, #f8e1fa);
 }
 
 html, body, #root {
-  height: 100%;
+  min-height: 100%;
 }
