@@ -19,8 +19,10 @@
     box-shadow: $darkshadow1;
     @include tablet {
       font-size: 1.1rem;
+      padding: 1.25rem;
     }
     @include desktop {
+      padding: 1.75rem;
       font-size: 1.3rem;
     }
   }
@@ -111,9 +113,8 @@
 
   &__copy {
     margin: 0;
-    @include tablet {
-      font-size: 1.75rem;
-    }
+    font-size: 1.25rem;
+    @include copy-sizing;
     line-height: 170%;
   }
 

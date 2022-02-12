@@ -1,5 +1,5 @@
 import './ProjectsSection.scss'
-import liftBookThumbnail from "../../assets/liftBookCapture.png"
+import liftBookThumbnail from "../../assets/images/liftBookCapture.png"
 import IndividualProject from '../IndividualProject/IndividualProject'
 import SectionTitle from '../SectionTitle/SectionTitle'
 
