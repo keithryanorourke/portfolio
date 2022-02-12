@@ -1,9 +1,13 @@
 @use '../../styles/partials/animations' as *;
+@use '../../styles/partials/mixins' as *;
 
 .home {
-  padding: 1rem 1.5rem;
-  
+  @include section-padding;
+  height: 100vh;
+
   &__codebox {
+    margin: 0 auto;
+    max-width: 43.75rem;
     display: flex;
     flex-direction: column;
     width: 100%;
