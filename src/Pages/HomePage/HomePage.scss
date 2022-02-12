@@ -1,9 +1,12 @@
 @use '../../styles/partials/animations' as *;
 @use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
 
 .about {
   @include section-padding;
   height: 100vh;
+  background-color: #f8e1faaa;
+  box-shadow: $darkshadow1;
 
   &__codebox {
     margin: 0 auto;
@@ -86,6 +89,9 @@
     font-size: 1.5rem;
     line-height: 170%;
     height: 1.5rem;
+    @include tablet {
+      margin-left: 3rem;
+    }
   }
 
   &__text-cursor {
