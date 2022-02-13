@@ -19,7 +19,7 @@ const HomePage = () => {
 
   const inputChangeHandler = (e, setter) => {
     if(e.target.name === 'love') {
-      if(e.target.value.length < 7) {
+      if(e.target.value.length < 6) {
         const color = (e.target.value === 'true' || e.target.value === 'false') ? "#a62100" : "#000"
         setter({value: e.target.value, style: {width: e.target.value.length.toString() + "ch", color: color}})
       }
