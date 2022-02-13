@@ -3,7 +3,6 @@
 
 .contact {
   @include section-padding;
-  margin-bottom: 3rem;
 
   &__container {
     @include tablet {
@@ -66,6 +65,7 @@
     @include copy-sizing;
     @include tablet {
       max-width: fit-content;
+      height: 100%;
     }
     @include desktop {
       padding: 1rem;
