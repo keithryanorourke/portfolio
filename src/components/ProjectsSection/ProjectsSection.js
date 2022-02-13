@@ -6,7 +6,7 @@ import SectionTitle from '../SectionTitle/SectionTitle'
 const ProjectsSection = () => {
   return (
     <section id="projects" className="projects">
-      <SectionTitle title='Projects' />
+      <SectionTitle title='PROJECTS' />
       <div className="projects__container">
         <IndividualProject
           thumbnail={liftBookThumbnail}

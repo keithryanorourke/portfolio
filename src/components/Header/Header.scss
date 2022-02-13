@@ -7,7 +7,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: #f828ff;
+  background: #7201bd;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -85,6 +85,7 @@
     padding: .25rem;
     border-radius: 0.5rem;
     border: 2px solid #000;
+    filter: invert(100%);
     font-weight: 600;
     font-size: 0.9rem;
     text-decoration: none;
@@ -96,7 +97,7 @@
       width: 2.5rem;
       height: 2.5rem;
       &:hover {
-        transform: scale(1.5) translateX(15%);
+        transform: scale(1.25) translateX(10%);
       }
     }
   }

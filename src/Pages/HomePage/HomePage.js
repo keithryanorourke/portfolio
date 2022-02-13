@@ -76,7 +76,10 @@ const HomePage = () => {
       <Header />
       <main>
         <section id="about" className="about">
-          <SectionTitle title='About Me' />
+          <div className="about__title-container">
+            <SectionTitle title='ABOUT' />
+            <SectionTitle title='ME' />
+          </div>
           {!showText ? 
           <form onSubmit={submitHandler} className="about__codebox">
             <label className="about__code-label"><span className="about__declaration">const</span> myName = <div className="about__input-wrapper">"

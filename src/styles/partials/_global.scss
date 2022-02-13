@@ -4,14 +4,14 @@
 
 body {
   margin: 0;
-  // background: linear-gradient(125deg, #f8e1faaa, #e1e5faaa, rgb(153, 209, 211));
-  
+  color: #fff;
 }
 
 main {
   position: relative;
   z-index: 2;
 }
+
 html, body, #root {
   min-height: 100%;
 }

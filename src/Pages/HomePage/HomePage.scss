@@ -4,12 +4,17 @@
 
 .about {
   @include section-padding;
-  margin-top: 4rem;
-  @include tablet {
-    margin-top: 0;
+
+  &__title-container {
+    display: flex;
+    gap: 0.75rem;
+    @include tablet {
+      flex-direction: column;
+    }
   }
 
   &__codebox {
+    color: #333;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
