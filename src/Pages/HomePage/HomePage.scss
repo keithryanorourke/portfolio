@@ -4,6 +4,7 @@
 
 .about {
   @include section-padding;
+  margin-top: 4rem;
 
   &__codebox {
     margin: 0 auto;

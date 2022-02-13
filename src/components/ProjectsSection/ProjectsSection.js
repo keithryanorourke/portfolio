@@ -5,7 +5,7 @@ import SectionTitle from '../SectionTitle/SectionTitle'
 
 const ProjectsSection = () => {
   return (
-    <section className="projects">
+    <section id="projects" className="projects">
       <SectionTitle title='Projects' />
       <div className="projects__container">
         <IndividualProject

@@ -1,0 +1,103 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.header {
+  width: 100%;
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #f8e1fa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem 1.5rem;
+  box-shadow: $darkshadow1;
+  @include tablet {
+    padding: .75rem 3rem;
+  }
+  @include desktop {
+    padding: .75rem 15%;
+  }
+
+  &__title-container {
+    @include tablet {
+      display: flex;
+      align-items: baseline;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    line-height: 100%;
+  }
+
+  &__subtitle {
+    display: none;
+    @include tablet {
+      margin: 0 0 0 .5rem;
+      line-height: 100%;
+      color: #999;
+      font-weight: 600;
+      display: block;
+    }
+  }
+
+  &__nav {
+    margin: 0;
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__nav-item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__nav-link {
+    height: 2rem;
+  }
+  
+  &__icon {
+    position: relative;
+    // z-index: 4;
+    width: 2rem;
+    height: 2rem;
+    padding: .25rem;
+    background-color: rgb(162, 229, 255);
+    background: linear-gradient(45deg, rgb(162, 229, 255), rgb(220, 187, 250));
+    border-bottom: 2px solid #ddd;
+    border-right: 2px solid #ddd;
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: transform 0.1s;
+
+    &:hover {
+      transform: scale(1.2) translateY(5%);
+    }
+    
+    &::after {
+      display: block;
+      background-color: red;
+      position: absolute;
+      // z-index: 5;
+      content: "";
+      height: 2rem;
+      width: 2rem;
+      top: 2px;
+      left: 2px;
+      border-bottom: 12px solid #999;
+      border-right: 12px solid #999;
+    }
+  }
+}

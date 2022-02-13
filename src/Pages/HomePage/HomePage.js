@@ -3,6 +3,7 @@ import "./HomePage.scss"
 import SectionTitle from "../../components/SectionTitle/SectionTitle"
 import ProjectsSection from "../../components/ProjectsSection/ProjectsSection"
 import ContactSection from "../../components/ContactSection/ContactSection"
+import Header from "../../components/Header/Header"
 
 const HomePage = () => {
   const timeOutArray = []
@@ -72,62 +73,65 @@ const HomePage = () => {
 
   return (
     <>
-      <section className="about">
-        <SectionTitle title='About Me' />
-        {!showText ? 
-        <form onSubmit={submitHandler} className="about__codebox">
-          <label className="about__code-label"><span className="about__declaration">const</span> myName = <div className="about__input-wrapper">"
-            <input 
-              type="text" 
-              style={nameInput.style} 
-              onChange={(e) => inputChangeHandler(e, setNameInput)} 
-              name="myName" 
-              value={nameInput.value} 
-              className="about__input" 
-              />
-          "</div></label>
-          <label className="about__code-label"><span className="about__declaration">const</span> type = <div className="about__input-wrapper">"
-            <input 
-              type="text" 
-              style={developerInput.style} 
-              onChange={(e) => inputChangeHandler(e, setDeveloperInput)} 
-              name="developer" 
-              value={developerInput.value} 
-              className="about__input" 
-              />
-          "</div></label>
-          <label className="about__code-label"><span className="about__declaration">const</span> lovesCollaboration = <div className="about__input-wrapper">
-            <input 
-              type="text" 
-              style={loveInput.style} 
-              onChange={(e) => inputChangeHandler(e, setLoveInput)} 
-              name="love" 
-              value={loveInput.value} 
-              className="about__input" 
-              />
-          </div></label>
-          <div className="about__myPortfolio-container">
-            <span className="about__code"><span className="about__declaration">const</span><span className="about__function"> myPortfolio</span>{" = (nameStr, typeStr, bool) => {"}</span>
-            <span className="about__code about__code--single-indent"><span className="about__declaration">if</span>{"(!bool) {"}</span>
-            <span className="about__code about__code--double-indent">alert('Lies!!')</span>
-            <span className="about__code about__code--single-indent">{"}"}<span className="about__declaration"> else</span> {"{"}</span>
-            <span className="about__code about__code--double-indent">console.<span className="about__function">log</span>{"(`Hello!\\nMy name is ${nameStr} and I am a ${typeStr} web developer!`)"}</span>
-            <span className="about__code about__code--single-indent">{"}"}</span>
-            <span className="about__code">{"}"}</span>
+      <Header />
+      <main>
+        <section id="about" className="about">
+          <SectionTitle title='About Me' />
+          {!showText ? 
+          <form onSubmit={submitHandler} className="about__codebox">
+            <label className="about__code-label"><span className="about__declaration">const</span> myName = <div className="about__input-wrapper">"
+              <input 
+                type="text" 
+                style={nameInput.style} 
+                onChange={(e) => inputChangeHandler(e, setNameInput)} 
+                name="myName" 
+                value={nameInput.value} 
+                className="about__input" 
+                />
+            "</div></label>
+            <label className="about__code-label"><span className="about__declaration">const</span> type = <div className="about__input-wrapper">"
+              <input 
+                type="text" 
+                style={developerInput.style} 
+                onChange={(e) => inputChangeHandler(e, setDeveloperInput)} 
+                name="developer" 
+                value={developerInput.value} 
+                className="about__input" 
+                />
+            "</div></label>
+            <label className="about__code-label"><span className="about__declaration">const</span> lovesCollaboration = <div className="about__input-wrapper">
+              <input 
+                type="text" 
+                style={loveInput.style} 
+                onChange={(e) => inputChangeHandler(e, setLoveInput)} 
+                name="love" 
+                value={loveInput.value} 
+                className="about__input" 
+                />
+            </div></label>
+            <div className="about__myPortfolio-container">
+              <span className="about__code"><span className="about__declaration">const</span><span className="about__function"> myPortfolio</span>{" = (nameStr, typeStr, bool) => {"}</span>
+              <span className="about__code about__code--single-indent"><span className="about__declaration">if</span>{"(!bool) {"}</span>
+              <span className="about__code about__code--double-indent">alert('Lies!!')</span>
+              <span className="about__code about__code--single-indent">{"}"}<span className="about__declaration"> else</span> {"{"}</span>
+              <span className="about__code about__code--double-indent">console.<span className="about__function">log</span>{"(`Hello!\\nMy name is ${nameStr} and I am a ${typeStr} web developer!`)"}</span>
+              <span className="about__code about__code--single-indent">{"}"}</span>
+              <span className="about__code">{"}"}</span>
+            </div>
+            <span className="about__code"><span className="about__function">myPortfolio</span>(myName, type, lovesCollaboration)</span>
+            <button className="about__submit">RUN</button>
+          </form>
+          : 
+          <div className="about__codebox">
+            <h3 className="about__subtitle">{titleText}{textCursor === 'title' ? <div className="about__text-cursor"></div> : ""}</h3>
+            <p className="about__copy">{p1Text}{textCursor === 'p1' ? <div className="about__text-cursor"></div> : ""}</p>
+            <p className="about__copy">{p2Text}{textCursor === 'p2' ? <div className="about__text-cursor"></div> : ""}</p>
           </div>
-          <span className="about__code"><span className="about__function">myPortfolio</span>(myName, type, lovesCollaboration)</span>
-          <button className="about__submit">RUN</button>
-        </form>
-        : 
-        <div className="about__codebox">
-          <h3 className="about__subtitle">{titleText}{textCursor === 'title' ? <div className="about__text-cursor"></div> : ""}</h3>
-          <p className="about__copy">{p1Text}{textCursor === 'p1' ? <div className="about__text-cursor"></div> : ""}</p>
-          <p className="about__copy">{p2Text}{textCursor === 'p2' ? <div className="about__text-cursor"></div> : ""}</p>
-        </div>
-        }
-      </section>
-      <ProjectsSection />
-      <ContactSection />
+          }
+        </section>
+        <ProjectsSection />
+        <ContactSection />
+      </main>
     </>
   )
 }

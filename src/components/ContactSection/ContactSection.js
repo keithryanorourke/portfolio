@@ -6,7 +6,7 @@ import linkedinIcon from "../../assets/icons/linkedin-icon.png"
 
 const ContactSection = () => {
   return (
-    <section className="contact">
+    <section id="contact" className="contact">
       <SectionTitle title='Contact' />
       <p className="contact__copy">Please feel free to reach out to me! I am not currently looking for work, but I'm always excited to collaborate on personal projects, or even to just talk about development and coding! ╰(*°▽°*)╯</p>
       <div className="contact__links-container">
