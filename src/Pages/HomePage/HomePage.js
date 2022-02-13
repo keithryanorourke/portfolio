@@ -129,7 +129,7 @@ const HomePage = () => {
             </div>
             <span className="about__code"><span className="about__function">myPortfolio</span>(myName, type, lovesCollaboration)</span>
             <div className="about__button-container">
-              <p className="about__hint">(Hey! Click on the glowing text!)</p>
+              <p className="about__hint">(Hey! Try changing the glowing text!)</p>
               <button className="about__submit">RUN</button>
             </div>
           </form>
