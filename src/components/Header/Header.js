@@ -8,7 +8,6 @@ const Header = () => {
     <header className="header">
       <div className="header__title-container">
         <h1 className="header__title">kRo</h1>
-        {/* <p className="header__subtitle">Full Stack Web Dev</p> */}
       </div>
       <nav className="header__nav">
         <ul className="header__nav-list">
@@ -17,6 +16,7 @@ const Header = () => {
           <li className="header__nav-item"><a href="#contact" className="header__nav-link"><img src={emailIcon} alt="Outline of an envelope" className="header__icon" /></a></li>
         </ul>
       </nav>
+      <div className="header__empty"></div>
     </header>
   )
 }

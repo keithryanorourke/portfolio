@@ -39,6 +39,9 @@
       height: 35vw;
       padding: 1rem;
     }
+    @include desktop {
+      height: 25vw;
+    }
   }
 
 

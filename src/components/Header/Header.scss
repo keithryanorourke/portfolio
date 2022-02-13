@@ -28,6 +28,7 @@
     @include tablet {
       display: flex;
       align-items: baseline;
+      height: 33%;
     }
   }
 
@@ -50,6 +51,9 @@
   &__nav {
     margin: 0;
     height: 100%;
+    @include tablet {
+      height: 33%;
+    }
   }
 
   &__nav-list {
@@ -99,6 +103,15 @@
       &:hover {
         transform: scale(1.25) translateX(10%);
       }
+    }
+  }
+
+  &__empty {
+    display: none;
+    @include tablet {
+      display: block;
+      height: 33%;
+      width: 100%;
     }
   }
 }
