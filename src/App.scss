@@ -8,12 +8,6 @@
   width: 100%;
   overflow-y: scroll;
   object-fit: cover;
-  // background: url('assets/images/body_background.jpg');
-  // background-size: cover;
-  @include tablet {
-    // background: url('assets/images/body_background2.jpg');
-    // background-size: cover;
-  }
 
   &__background-overlay {
     display: block;

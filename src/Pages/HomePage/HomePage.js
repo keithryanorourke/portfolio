@@ -5,6 +5,11 @@ import ProjectsSection from "../../components/ProjectsSection/ProjectsSection"
 import ContactSection from "../../components/ContactSection/ContactSection"
 import Header from "../../components/Header/Header"
 
+
+// Disable warning for incorrect usage of ${} since I'm intentionally trying to print ${} to the screen.
+/* eslint-disable no-template-curly-in-string */ 
+
+
 const HomePage = () => {
   const timeOutArray = []
   const [titleText, setTitleText] = useState("")
@@ -71,10 +76,11 @@ const HomePage = () => {
   }
 
   // Cleanup useEffect in case user leaves page before text animations complete
-  useEffect(() => () => {
+  useEffect(() => {
     for(let i=0; i<timeOutArray.length; i++) {
       clearTimeout(timeOutArray[i])
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
