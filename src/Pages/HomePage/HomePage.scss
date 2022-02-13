@@ -34,6 +34,11 @@
       padding: 1.75rem;
       font-size: 1.3rem;
     }
+
+    &:hover .about__hint {
+      color: #444;
+      transform: scale(1.05)
+    }
   }
 
   &__code-label {
@@ -55,7 +60,8 @@
   }
 
   &__input {
-    animation: pulse 2s linear infinite;
+    cursor: pointer;
+    animation: pulse 1.5s linear infinite;
     font-size: inherit;
     color: inherit;
     width: fit-content;
@@ -88,6 +94,19 @@
     padding: 1rem 0;
   }
 
+  &__button-container {
+    margin-top: 0.75rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__hint {
+    color: #ccc;
+    margin: 0;
+    line-height: 100%;
+    transition: transform, color, 0.1s;
+  }
+
   &__submit {
     font-family: inherit;
     font-size: 1.5rem;
@@ -98,7 +117,7 @@
     border-bottom: 4px solid #aaa;
     box-shadow: $darkshadow1;
     border-radius: .375rem;
-    margin: 0.75rem 0 0;
+    margin: 0;
     cursor: pointer;
     transition: transform 0.2s;
     &:hover {

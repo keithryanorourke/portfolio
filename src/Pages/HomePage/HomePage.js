@@ -10,6 +10,7 @@ const HomePage = () => {
   const [titleText, setTitleText] = useState("")
   const [p1Text, setP1Text] = useState("")
   const [p2Text, setP2Text] = useState("")
+  const [p3Text, setP3Text] = useState("")
   const [textCursor, setTextCursor] = useState('title')
   const [showText, setShowText] = useState(false)
   const [nameInput, setNameInput] = useState({value: "Keith Ryan O'Rourke", length: 19, style: {width: "19ch"}}) 
@@ -49,7 +50,12 @@ const HomePage = () => {
     timeOutArray.push(setTimeout(() => {
       const firstSentence = animateString("", `My name is ${nameInput.value || "(Hm... Seems like someone left a field empty!)"} and I'm a ${developerInput.value || "(Hm... Seems like someone left a field empty!)"} web developer!`, setP1Text, 25, 'p2')
       timeOutArray.push(setTimeout(() => {
-        animateString("", "\nMy favorite thing about web development is the plethora of opportunities to collaborate with others. I'm very passionate about technology education and professional growth!", setP2Text, 25)
+        const secondSentence = animateString("", "\nMy favorite thing about web development is the plethora of opportunities to collaborate with others. I'm very passionate about technology education and professional growth!", setP2Text, 25, 'p3')
+        timeOutArray.push(setTimeout(() => {
+          const splitName = nameInput.value.split(' ')
+          const middlename = (splitName.length === 3 ? splitName[1] || 'Ryan' : 'Ryan')
+          animateString("", `By the way: I go by my middlename, ${middlename}! 〜(￣▽￣〜)`, setP3Text, 25, null)
+        }, secondSentence.time + 500))
       }, firstSentence.time + 500))
     }, title.time + 300))
   }
@@ -122,13 +128,17 @@ const HomePage = () => {
               <span className="about__code">{"}"}</span>
             </div>
             <span className="about__code"><span className="about__function">myPortfolio</span>(myName, type, lovesCollaboration)</span>
-            <button className="about__submit">RUN</button>
+            <div className="about__button-container">
+              <p className="about__hint">(Hey! Click on the glowing text!)</p>
+              <button className="about__submit">RUN</button>
+            </div>
           </form>
           : 
           <div className="about__codebox">
             <h3 className="about__subtitle">{titleText}{textCursor === 'title' ? <div className="about__text-cursor"></div> : ""}</h3>
-            <p className="about__copy">{p1Text}{textCursor === 'p1' ? <div className="about__text-cursor"></div> : ""}</p>
-            <p className="about__copy">{p2Text}{textCursor === 'p2' ? <div className="about__text-cursor"></div> : ""}</p>
+            <p className="about__copy">{p1Text}{textCursor === 'p1' ? <span className="about__text-cursor"></span> : ""}</p>
+            <p className="about__copy">{p2Text}{textCursor === 'p2' ? <span className="about__text-cursor"></span> : ""}</p>
+            <p className="about__copy">{p3Text}{textCursor === 'p3' ? <span className="about__text-cursor"></span> : ""}</p>
           </div>
           }
         </section>
