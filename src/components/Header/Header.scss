@@ -7,17 +7,21 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: #f8e1fa;
+  background: #f828ff;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: .5rem 1.5rem;
   box-shadow: $darkshadow1;
+  overflow: hidden;
   @include tablet {
-    padding: .75rem 3rem;
+    padding: .75rem;
+    flex-direction: column;
+    width: fit-content;
+    height: 100%;
   }
   @include desktop {
-    padding: .75rem 15%;
+    padding: .75rem;
   }
 
   &__title-container {
@@ -45,9 +49,11 @@
 
   &__nav {
     margin: 0;
+    height: 100%;
   }
 
   &__nav-list {
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
@@ -55,6 +61,11 @@
     padding: 0;
     margin: 0;
     list-style: none;
+    @include tablet {
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
+    }
   }
 
   &__nav-item {
@@ -68,36 +79,25 @@
   
   &__icon {
     position: relative;
-    // z-index: 4;
+    z-index: 0;
     width: 2rem;
     height: 2rem;
     padding: .25rem;
-    background-color: rgb(162, 229, 255);
-    background: linear-gradient(45deg, rgb(162, 229, 255), rgb(220, 187, 250));
-    border-bottom: 2px solid #ddd;
-    border-right: 2px solid #ddd;
-    border-radius: 50%;
+    border-radius: 0.5rem;
+    border: 2px solid #000;
     font-weight: 600;
     font-size: 0.9rem;
     text-decoration: none;
     transition: transform 0.1s;
-
     &:hover {
       transform: scale(1.2) translateY(5%);
     }
-    
-    &::after {
-      display: block;
-      background-color: red;
-      position: absolute;
-      // z-index: 5;
-      content: "";
-      height: 2rem;
-      width: 2rem;
-      top: 2px;
-      left: 2px;
-      border-bottom: 12px solid #999;
-      border-right: 12px solid #999;
+    @include tablet {
+      width: 2.5rem;
+      height: 2.5rem;
+      &:hover {
+        transform: scale(1.5) translateX(15%);
+      }
     }
   }
 }

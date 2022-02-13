@@ -7,8 +7,8 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header__title-container">
-        <h1 className="header__title">KRO</h1>
-        <p className="header__subtitle">Full Stack Web Dev</p>
+        <h1 className="header__title">kRo</h1>
+        {/* <p className="header__subtitle">Full Stack Web Dev</p> */}
       </div>
       <nav className="header__nav">
         <ul className="header__nav-list">

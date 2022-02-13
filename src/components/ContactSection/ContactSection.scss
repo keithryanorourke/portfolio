@@ -3,6 +3,7 @@
 
 .contact {
   @include section-padding;
+  margin-bottom: 3rem;
 
   &__copy {
     @include copy-sizing;
@@ -10,7 +11,7 @@
 
   &__links-container {
     display: flex;
-    background-color: #aaaaaa55;
+    background-color: #aaaaaa99;
     box-shadow: $darkshadow1;
     padding: 1rem 0.5rem;
     border-radius: .5rem;
@@ -40,7 +41,7 @@
     text-decoration: none;
     color: #000;
     transition: transform 0.1s;
-    max-width: 18.75rem;
+    max-width: 12.75rem;
     font-weight: 600;
     &:hover {
       transform: scale(1.05)

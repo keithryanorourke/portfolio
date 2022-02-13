@@ -5,6 +5,9 @@
 .about {
   @include section-padding;
   margin-top: 4rem;
+  @include tablet {
+    margin-top: 0;
+  }
 
   &__codebox {
     margin: 0 auto;
@@ -90,7 +93,7 @@
     border-bottom: 4px solid #aaa;
     box-shadow: $darkshadow1;
     border-radius: .375rem;
-    margin: 0.75rem 0;
+    margin: 0.75rem 0 0;
     cursor: pointer;
     transition: transform 0.2s;
     &:hover {
