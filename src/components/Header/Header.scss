@@ -7,7 +7,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: #7201bd;
+  background: linear-gradient(270deg, #7201bd, #8501bd);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,6 +15,7 @@
   box-shadow: $darkshadow1;
   overflow: hidden;
   @include tablet {
+    background: linear-gradient(60deg, #7201bd, #8501bd);
     padding: .75rem;
     flex-direction: column;
     width: fit-content;

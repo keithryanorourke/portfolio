@@ -6,13 +6,16 @@
 
   &__container {
     @include tablet {
+      background-color: #eee;
+      padding: 1rem;
+      border-radius: 0.5rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      height: 15.75rem;
+      min-height: 15.75rem;
     }
     @include desktop {
-      height: 17.5rem;
+      min-height: 17.5rem;
     }
   }
   
@@ -21,7 +24,8 @@
     margin: 0;
     margin-bottom: 2rem;
     @include tablet {
-      margin-bottom: 0;
+      color: #000;
+      // margin-bottom: 0;
     }
   }
 
