@@ -5,8 +5,8 @@ import SectionTitle from '../SectionTitle/SectionTitle'
 
 const ProjectsSection = () => {
   return (
-    <section className="projects">
-      <SectionTitle title='Projects' />
+    <section id="projects" className="projects">
+      <SectionTitle title='PROJECTS' />
       <div className="projects__container">
         <IndividualProject
           thumbnail={liftBookThumbnail}

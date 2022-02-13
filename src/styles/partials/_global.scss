@@ -4,7 +4,12 @@
 
 body {
   margin: 0;
-  background: linear-gradient(125deg, #f8e1faaa, rgb(211, 191, 153));
+  color: #fff;
+}
+
+main {
+  position: relative;
+  z-index: 2;
 }
 
 html, body, #root {

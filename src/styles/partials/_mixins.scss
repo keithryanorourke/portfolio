@@ -10,15 +10,33 @@
   }
 }
 
+// @mixin section-padding {
+//   padding: 3rem 1.5rem 6rem;
+//   @include tablet {
+//     padding: 2rem 3rem 12rem calc(3rem + 83px);
+//   }
+//   @include desktop {
+//     padding: 3rem 15% 12rem calc(15% + 81px);
+//   }
+// }
+
 @mixin section-padding {
-  padding: 1rem 1.5rem;
-  @include tablet {
-    padding: 2rem 3rem;
+    padding: 0 1.5rem 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    @include tablet {
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 3rem 0 calc(3rem + 83px);
+    }
+    @include desktop {
+      padding: 0 10% 0 calc(10% + 81px);
+    }
   }
-  @include desktop {
-    padding: 3rem 15%;
-  }
-}
 
 @mixin copy-sizing {
   font-size: 1rem;
