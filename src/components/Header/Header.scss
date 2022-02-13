@@ -1,0 +1,118 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.header {
+  width: 100%;
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(270deg, #7201bd, #8501bd);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem 1.5rem;
+  box-shadow: $darkshadow1;
+  overflow: hidden;
+  @include tablet {
+    background: linear-gradient(60deg, #7201bd, #8501bd);
+    padding: .75rem;
+    flex-direction: column;
+    width: fit-content;
+    height: 100%;
+  }
+  @include desktop {
+    padding: .75rem;
+  }
+
+  &__title-container {
+    @include tablet {
+      display: flex;
+      align-items: baseline;
+      height: 33%;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    line-height: 100%;
+  }
+
+  &__subtitle {
+    display: none;
+    @include tablet {
+      margin: 0 0 0 .5rem;
+      line-height: 100%;
+      color: #999;
+      font-weight: 600;
+      display: block;
+    }
+  }
+
+  &__nav {
+    margin: 0;
+    height: 100%;
+    @include tablet {
+      height: 33%;
+    }
+  }
+
+  &__nav-list {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    @include tablet {
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
+    }
+  }
+
+  &__nav-item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__nav-link {
+    height: 2rem;
+  }
+  
+  &__icon {
+    position: relative;
+    z-index: 0;
+    width: 2rem;
+    height: 2rem;
+    padding: .25rem;
+    border-radius: 0.5rem;
+    border: 2px solid #000;
+    filter: invert(100%);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: transform 0.1s;
+    &:hover {
+      transform: scale(1.2) translateY(5%);
+    }
+    @include tablet {
+      width: 2.5rem;
+      height: 2.5rem;
+      &:hover {
+        transform: scale(1.25) translateX(10%);
+      }
+    }
+  }
+
+  &__empty {
+    display: none;
+    @include tablet {
+      display: block;
+      height: 33%;
+      width: 100%;
+    }
+  }
+}

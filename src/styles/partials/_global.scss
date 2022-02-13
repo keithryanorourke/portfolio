@@ -1,0 +1,17 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #fff;
+}
+
+main {
+  position: relative;
+  z-index: 2;
+}
+
+html, body, #root {
+  min-height: 100%;
+}

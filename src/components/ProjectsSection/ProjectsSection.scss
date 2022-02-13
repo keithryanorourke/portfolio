@@ -1,0 +1,12 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.projects {
+  @include section-padding;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}

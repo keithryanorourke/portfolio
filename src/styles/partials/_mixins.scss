@@ -1,0 +1,49 @@
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+// @mixin section-padding {
+//   padding: 3rem 1.5rem 6rem;
+//   @include tablet {
+//     padding: 2rem 3rem 12rem calc(3rem + 83px);
+//   }
+//   @include desktop {
+//     padding: 3rem 15% 12rem calc(15% + 81px);
+//   }
+// }
+
+@mixin section-padding {
+    padding: 0 1.5rem 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    @include tablet {
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 3rem 0 calc(3rem + 83px);
+    }
+    @include desktop {
+      padding: 0 10% 0 calc(10% + 81px);
+    }
+  }
+
+@mixin copy-sizing {
+  font-size: 1rem;
+  @include tablet {
+    font-size: 1.25rem;
+  }
+  @include desktop {
+    font-size: 1.5rem;
+  }
+}
