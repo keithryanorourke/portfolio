@@ -5,10 +5,10 @@
   @include section-padding;
 
   &__container {
+    background-color: #eee;
+    padding: 1rem;
+    border-radius: 0.5rem;
     @include tablet {
-      background-color: #eee;
-      padding: 1rem;
-      border-radius: 0.5rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -23,10 +23,10 @@
     @include copy-sizing;
     margin: 0;
     margin-bottom: 2rem;
-    @include tablet {
+    // @include tablet {
       color: #000;
       // margin-bottom: 0;
-    }
+    // }
   }
 
   &__links-container {
