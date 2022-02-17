@@ -35,6 +35,7 @@
       padding: 0 10% 0 calc(10% + 81px);
     }
     @include rotated-phone() {
+      min-height: 100vh;
       height: fit-content;
       padding: 5rem 3rem 2rem;
     }

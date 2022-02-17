@@ -4,6 +4,7 @@ import SectionTitle from "../../components/SectionTitle/SectionTitle"
 import ProjectsSection from "../../components/ProjectsSection/ProjectsSection"
 import ContactSection from "../../components/ContactSection/ContactSection"
 import Header from "../../components/Header/Header"
+import { useNavigate } from "react-router-dom"
 
 const HomePage = () => {
   const timeOutArray = []
@@ -56,6 +57,7 @@ const HomePage = () => {
   }
 
   const renderText = () => {
+    document.querySelector('.app').scroll(0, 0)
     const title = animateString("", "Hello!", setTitleText, 50, 'p1')
     timeOutArray.push(setTimeout(() => {
       const firstSentence = animateString("", `My name is ${nameInput.value || "(Hm... Seems like someone left a field empty!)"} and I'm a ${developerInput.value || "(Hm... Seems like someone left a field empty!)"} web developer!`, setP1Text, 25, 'p2')
@@ -132,7 +134,7 @@ const HomePage = () => {
                 />
             </div></label>
             <div className="about__myPortfolio-container">
-              <span className="about__code"><span className="about__declaration">const</span><span className="about__function"> myPortfolio</span>{" = (nameStr, typeStr, bool) => {"}</span>
+              <span className="about__code"><span className="about__declaration">const</span><span className="about__function"> renderAbout</span>{" = (nameStr, typeStr, bool) => {"}</span>
               <span className="about__code about__code--single-indent"><span className="about__declaration">if</span>{"(!bool) {"}</span>
               <span className="about__code about__code--double-indent">alert('Lies!!')</span>
               <span className="about__code about__code--single-indent">{"}"}<span className="about__declaration"> else</span> {"{"}</span>
@@ -140,7 +142,7 @@ const HomePage = () => {
               <span className="about__code about__code--single-indent">{"}"}</span>
               <span className="about__code">{"}"}</span>
             </div>
-            <span className="about__code"><span className="about__function">myPortfolio</span>(myName, type, lovesCollaboration)</span>
+            <span className="about__code"><span className="about__function">renderAbout</span>(myName, type, lovesCollaboration)</span>
             <div className="about__button-container">
               <p className="about__hint">(Try changing the glowing text!)</p>
               <button className="about__submit">RUN</button>
