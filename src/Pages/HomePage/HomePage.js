@@ -11,6 +11,7 @@ const HomePage = () => {
   const [p1Text, setP1Text] = useState("")
   const [p2Text, setP2Text] = useState("")
   const [p3Text, setP3Text] = useState("")
+  const [span1Text, setSpan1Text] = useState("")
   const [textCursor, setTextCursor] = useState('title')
   const [showText, setShowText] = useState(false)
   const [nameInput, setNameInput] = useState({value: "Keith Ryan O'Rourke", length: 19, style: {width: "19ch"}}) 
@@ -30,6 +31,15 @@ const HomePage = () => {
     }
   }
 
+  /**
+   * 
+   * @param {string} initialState 
+   * @param {string} content 
+   * @param {function} setter 
+   * @param {integer} interval 
+   * @param {string} nextCursor 
+   * @returns 
+   */
   const animateString = (initialState, content, setter, interval, nextCursor) => {
     let newString = initialState
     let i = 0
@@ -54,7 +64,10 @@ const HomePage = () => {
         timeOutArray.push(setTimeout(() => {
           const splitName = nameInput.value.split(' ')
           const middlename = (splitName.length === 3 ? splitName[1] || 'Ryan' : 'Ryan')
-          animateString("", `By the way: I go by my middlename, ${middlename}! 〜(￣▽￣〜)`, setP3Text, 25, null)
+          const thirdSentence = animateString("", `By the way: I go by my middlename, ${middlename}! `, setP3Text, 25, 'span1')
+          timeOutArray.push(setTimeout(() => {
+            animateString("", `〜(￣▽￣〜)`, setSpan1Text, 25, null)
+          }, thirdSentence.time))
         }, secondSentence.time + 500))
       }, firstSentence.time + 500))
     }, title.time + 300))
@@ -138,7 +151,7 @@ const HomePage = () => {
             <h3 className="about__subtitle">{titleText}{textCursor === 'title' ? <div className="about__text-cursor"></div> : ""}</h3>
             <p className="about__copy">{p1Text}{textCursor === 'p1' ? <span className="about__text-cursor"></span> : ""}</p>
             <p className="about__copy">{p2Text}{textCursor === 'p2' ? <span className="about__text-cursor"></span> : ""}</p>
-            <p className="about__copy">{p3Text}{textCursor === 'p3' ? <span className="about__text-cursor"></span> : ""}</p>
+            <p className="about__copy">{p3Text}{textCursor === 'p3' ? <span className="about__text-cursor"></span> : ""}<span className="about__face">{span1Text}{textCursor === 'span1' ? <span className="about__text-cursor"></span> : ""}</span></p>
           </div>
           }
         </section>
