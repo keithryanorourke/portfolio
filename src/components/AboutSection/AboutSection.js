@@ -1,14 +1,13 @@
 import { useState, useEffect } from "react"
 import "./AboutSection.scss"
 import SectionTitle from "../../components/SectionTitle/SectionTitle"
-import ProjectsSection from "../../components/ProjectsSection/ProjectsSection"
-import ContactSection from "../../components/ContactSection/ContactSection"
-import Header from "../../components/Header/Header"
 
-
+// Disable warning for incorrect usage of ${} since I'm intentionally trying to print ${} to the screen.
+/* eslint-disable no-template-curly-in-string */ 
 
   const AboutSection = () => {
   const timeOutArray = []
+  const intervalArray = []
   const [titleText, setTitleText] = useState("")
   const [p1Text, setP1Text] = useState("")
   const [p2Text, setP2Text] = useState("")
@@ -40,49 +39,64 @@ import Header from "../../components/Header/Header"
    * @param {function} setter 
    * @param {integer} interval 
    * @param {string} nextCursor 
-   * @returns 
+   * @returns {number} time in ms to complete animation
    */
-  const animateString = (initialState, content, setter, interval, nextCursor) => {
-    let newString = initialState
+  const animateString = (delayTime, content, setter, interval, nextCursor) => {
+    let newString = ''
     let i = 0
-    const stringAnimation = setInterval(() => {
-      newString += content[i]
-      setter(newString)
-      i++
-      if(i >=content.length) {
-        clearInterval(stringAnimation)
-        setTextCursor(prevState => nextCursor || prevState)
-      }
-    }, interval)
-    return {newContent: initialState + content, time: interval*content.length}
+    console.log(delayTime, content, i, nextCursor, content.length)
+    timeOutArray.push(setTimeout(() => {
+      const animationTimer = setInterval(() => {
+        if(content[i]) {
+          newString += content[i]
+          setter(newString)
+        }
+        i++
+        if(i >=content.length || !content[i]) {
+          clearInterval(animationTimer)
+          setTextCursor(prevState => nextCursor || prevState)
+        }
+      }, interval)
+      intervalArray.push(animationTimer)
+    }, delayTime || 0))
+    return (interval*content.length)
   }
 
   const renderText = () => {
     document.querySelector('.app').scroll(0, 0)
-    const title = animateString("", "Hello!", setTitleText, 50, 'p1')
-    timeOutArray.push(setTimeout(() => {
-      const firstSentence = animateString("", `My name is ${nameInput.value || "(Hm... Seems like someone left a field empty!)"} and I'm a ${developerInput.value || "(Hm... Seems like someone left a field empty!)"} web developer!`, setP1Text, 25, 'p2')
-      timeOutArray.push(setTimeout(() => {
-        const secondSentence = animateString("", "\nMy favorite thing about web development is the plethora of opportunities to collaborate with others. I'm very passionate about technology education and professional growth!", setP2Text, 25, 'p3')
-        timeOutArray.push(setTimeout(() => {
-          const splitName = nameInput.value.split(' ')
-          const middlename = (splitName.length === 3 ? splitName[1] || 'Ryan' : 'Ryan')
-          const thirdSentence = animateString("", `By the way: I go by my middlename, ${middlename}! `, setP3Text, 25, 'span1')
-          timeOutArray.push(setTimeout(() => {
-            animateString("", `〜(￣▽￣〜)`, setSpan1Text, 25, null)
-          }, thirdSentence.time))
-        }, secondSentence.time + 500))
-      }, firstSentence.time + 500))
-    }, title.time + 300))
+    const splitName = nameInput.value.split(' ')
+    const middlename = (splitName.length === 3 ? splitName[1] || 'Ryan' : 'Ryan')
+    let delayTime = 0;
+    delayTime += animateString(0, "Hello!", setTitleText, 50, 'p1')
+    delayTime += animateString(delayTime+300, `My name is ${nameInput.value || "(Hm... Seems like someone left a field empty!)"} and I'm a ${developerInput.value || "(Hm... Seems like someone left a field empty!)"} web developer!`, setP1Text, 25, 'p2')
+    delayTime += animateString(delayTime+500, "My favorite thing about web development is the plethora of opportunities to collaborate with others. I'm very passionate about technology education and professional growth!", setP2Text, 25, 'p3')
+    delayTime += animateString(delayTime+500, `By the way: I go by my middlename, ${middlename}! `, setP3Text, 25, 'span1')
+    animateString(delayTime+500, '〜(￣▽￣〜)', setSpan1Text, 25, "")
+    // timeOutArray.push(setTimeout(() => {
+    //   lastAnimation = animateString(lastAnimation, `My name is ${nameInput.value || "(Hm... Seems like someone left a field empty!)"} and I'm a ${developerInput.value || "(Hm... Seems like someone left a field empty!)"} web developer!`, setP1Text, 25, 'p2')
+    //   timeOutArray.push(setTimeout(() => {
+    //     lastAnimation = animateString(lastAnimation, "\nMy favorite thing about web development is the plethora of opportunities to collaborate with others. I'm very passionate about technology education and professional growth!", setP2Text, 25, 'p3')
+    //     timeOutArray.push(setTimeout(() => {
+    //       lastAnimation = animateString(lastAnimation, `By the way: I go by my middlename, ${middlename}! `, setP3Text, 25, 'span1')
+    //       timeOutArray.push(setTimeout(() => {
+    //         animateString(lastAnimation, `〜(￣▽￣〜)`, setSpan1Text, 25, null)
+    //       }, lastAnimation.time))
+    //     }, lastAnimation.time + 500))
+    //   }, lastAnimation.time + 500))
+    // }, lastAnimation.time + 300))
   }
 
   // Cleanup useEffect in case user leaves page before text animations complete
   useEffect(() => {
+    return () => {
     for(let i=0; i<timeOutArray.length; i++) {
       clearTimeout(timeOutArray[i])
     }
+    for (let i=0; i<intervalArray.length; i++) {
+      clearInterval(intervalArray[i])
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }}, [])
 
   const submitHandler = (e) => {
     e.preventDefault()
