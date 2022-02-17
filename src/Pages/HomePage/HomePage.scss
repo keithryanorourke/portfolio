@@ -153,6 +153,11 @@
     line-height: 170%;
   }
 
+  &__face {
+    display: block;
+    text-align: center;
+  }
+
   &__text-cursor {
     transform: translateY(0.2rem);
     content: "";

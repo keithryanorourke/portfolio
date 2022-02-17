@@ -4,6 +4,12 @@ import SectionTitle from "../../components/SectionTitle/SectionTitle"
 import ProjectsSection from "../../components/ProjectsSection/ProjectsSection"
 import ContactSection from "../../components/ContactSection/ContactSection"
 import Header from "../../components/Header/Header"
+import { useNavigate } from "react-router-dom"
+
+
+// Disable warning for incorrect usage of ${} since I'm intentionally trying to print ${} to the screen.
+/* eslint-disable no-template-curly-in-string */ 
+
 
 const HomePage = () => {
   const timeOutArray = []
@@ -11,6 +17,7 @@ const HomePage = () => {
   const [p1Text, setP1Text] = useState("")
   const [p2Text, setP2Text] = useState("")
   const [p3Text, setP3Text] = useState("")
+  const [span1Text, setSpan1Text] = useState("")
   const [textCursor, setTextCursor] = useState('title')
   const [showText, setShowText] = useState(false)
   const [nameInput, setNameInput] = useState({value: "Keith Ryan O'Rourke", length: 19, style: {width: "19ch"}}) 
@@ -30,6 +37,15 @@ const HomePage = () => {
     }
   }
 
+  /**
+   * 
+   * @param {string} initialState 
+   * @param {string} content 
+   * @param {function} setter 
+   * @param {integer} interval 
+   * @param {string} nextCursor 
+   * @returns 
+   */
   const animateString = (initialState, content, setter, interval, nextCursor) => {
     let newString = initialState
     let i = 0
@@ -46,6 +62,7 @@ const HomePage = () => {
   }
 
   const renderText = () => {
+    document.querySelector('.app').scroll(0, 0)
     const title = animateString("", "Hello!", setTitleText, 50, 'p1')
     timeOutArray.push(setTimeout(() => {
       const firstSentence = animateString("", `My name is ${nameInput.value || "(Hm... Seems like someone left a field empty!)"} and I'm a ${developerInput.value || "(Hm... Seems like someone left a field empty!)"} web developer!`, setP1Text, 25, 'p2')
@@ -54,7 +71,10 @@ const HomePage = () => {
         timeOutArray.push(setTimeout(() => {
           const splitName = nameInput.value.split(' ')
           const middlename = (splitName.length === 3 ? splitName[1] || 'Ryan' : 'Ryan')
-          animateString("", `By the way: I go by my middlename, ${middlename}! 〜(￣▽￣〜)`, setP3Text, 25, null)
+          const thirdSentence = animateString("", `By the way: I go by my middlename, ${middlename}! `, setP3Text, 25, 'span1')
+          timeOutArray.push(setTimeout(() => {
+            animateString("", `〜(￣▽￣〜)`, setSpan1Text, 25, null)
+          }, thirdSentence.time))
         }, secondSentence.time + 500))
       }, firstSentence.time + 500))
     }, title.time + 300))
@@ -71,10 +91,11 @@ const HomePage = () => {
   }
 
   // Cleanup useEffect in case user leaves page before text animations complete
-  useEffect(() => () => {
+  useEffect(() => {
     for(let i=0; i<timeOutArray.length; i++) {
       clearTimeout(timeOutArray[i])
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -119,7 +140,7 @@ const HomePage = () => {
                 />
             </div></label>
             <div className="about__myPortfolio-container">
-              <span className="about__code"><span className="about__declaration">const</span><span className="about__function"> myPortfolio</span>{" = (nameStr, typeStr, bool) => {"}</span>
+              <span className="about__code"><span className="about__declaration">const</span><span className="about__function"> renderAbout</span>{" = (nameStr, typeStr, bool) => {"}</span>
               <span className="about__code about__code--single-indent"><span className="about__declaration">if</span>{"(!bool) {"}</span>
               <span className="about__code about__code--double-indent">alert('Lies!!')</span>
               <span className="about__code about__code--single-indent">{"}"}<span className="about__declaration"> else</span> {"{"}</span>
@@ -127,7 +148,7 @@ const HomePage = () => {
               <span className="about__code about__code--single-indent">{"}"}</span>
               <span className="about__code">{"}"}</span>
             </div>
-            <span className="about__code"><span className="about__function">myPortfolio</span>(myName, type, lovesCollaboration)</span>
+            <span className="about__code"><span className="about__function">renderAbout</span>(myName, type, lovesCollaboration)</span>
             <div className="about__button-container">
               <p className="about__hint">(Try changing the glowing text!)</p>
               <button className="about__submit">RUN</button>
@@ -138,7 +159,7 @@ const HomePage = () => {
             <h3 className="about__subtitle">{titleText}{textCursor === 'title' ? <div className="about__text-cursor"></div> : ""}</h3>
             <p className="about__copy">{p1Text}{textCursor === 'p1' ? <span className="about__text-cursor"></span> : ""}</p>
             <p className="about__copy">{p2Text}{textCursor === 'p2' ? <span className="about__text-cursor"></span> : ""}</p>
-            <p className="about__copy">{p3Text}{textCursor === 'p3' ? <span className="about__text-cursor"></span> : ""}</p>
+            <p className="about__copy">{p3Text}{textCursor === 'p3' ? <span className="about__text-cursor"></span> : ""}<span className="about__face">{span1Text}{textCursor === 'span1' ? <span className="about__text-cursor"></span> : ""}</span></p>
           </div>
           }
         </section>
