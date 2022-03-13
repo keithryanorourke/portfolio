@@ -144,7 +144,7 @@ import SectionTitle from "../../components/SectionTitle/SectionTitle"
         </div>
         <span className="about__code"><span className="about__function">renderAbout</span>(myName, type, lovesCollaboration)</span>
         <div className="about__button-container">
-          <p className="about__hint">(Try changing the glowing text!)</p>
+          <p className="about__hint">(Try changing the glowing text before hitting RUN!)</p>
           <button className="about__submit">RUN</button>
         </div>
       </form>
