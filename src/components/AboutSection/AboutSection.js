@@ -72,18 +72,6 @@ import SectionTitle from "../../components/SectionTitle/SectionTitle"
     delayTime += animateString(delayTime+500, "My favorite thing about web development is the plethora of opportunities to collaborate with others. I'm very passionate about technology education and professional growth!", setP2Text, 25, 'p3')
     delayTime += animateString(delayTime+500, `By the way: I go by my middlename, ${middlename}! `, setP3Text, 25, 'span1')
     animateString(delayTime+500, '〜(￣▽￣〜)', setSpan1Text, 25, "")
-    // timeOutArray.push(setTimeout(() => {
-    //   lastAnimation = animateString(lastAnimation, `My name is ${nameInput.value || "(Hm... Seems like someone left a field empty!)"} and I'm a ${developerInput.value || "(Hm... Seems like someone left a field empty!)"} web developer!`, setP1Text, 25, 'p2')
-    //   timeOutArray.push(setTimeout(() => {
-    //     lastAnimation = animateString(lastAnimation, "\nMy favorite thing about web development is the plethora of opportunities to collaborate with others. I'm very passionate about technology education and professional growth!", setP2Text, 25, 'p3')
-    //     timeOutArray.push(setTimeout(() => {
-    //       lastAnimation = animateString(lastAnimation, `By the way: I go by my middlename, ${middlename}! `, setP3Text, 25, 'span1')
-    //       timeOutArray.push(setTimeout(() => {
-    //         animateString(lastAnimation, `〜(￣▽￣〜)`, setSpan1Text, 25, null)
-    //       }, lastAnimation.time))
-    //     }, lastAnimation.time + 500))
-    //   }, lastAnimation.time + 500))
-    // }, lastAnimation.time + 300))
   }
 
   // Cleanup useEffect in case user leaves page before text animations complete
@@ -156,7 +144,7 @@ import SectionTitle from "../../components/SectionTitle/SectionTitle"
         </div>
         <span className="about__code"><span className="about__function">renderAbout</span>(myName, type, lovesCollaboration)</span>
         <div className="about__button-container">
-          <p className="about__hint">(Try changing the glowing text!)</p>
+          <p className="about__hint">(Try changing the glowing text before hitting RUN!)</p>
           <button className="about__submit">RUN</button>
         </div>
       </form>
