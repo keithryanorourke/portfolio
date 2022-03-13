@@ -13,7 +13,6 @@
   align-items: center;
   padding: .5rem 1.5rem;
   box-shadow: $darkshadow1;
-  overflow: hidden;
   @include tablet {
     background: linear-gradient(60deg, #7201bd, #8501bd);
     padding: .75rem;
@@ -79,7 +78,41 @@
   }
 
   &__nav-link {
+    position: relative;
     height: 2rem;
+    &:hover::after {
+      padding: 0.4375rem;
+      position: absolute;
+      border-radius: 0.75rem;
+      opacity: 0.9;
+      bottom: -2.5rem;
+      left: -0.75rem;
+      color: #fff;
+      background: linear-gradient(-45deg, rgb(108, 15, 151), #96068e);
+      z-index: 6;
+      @include tablet {
+        transform: translateY(50%);
+        padding: 0.625rem;
+        font-size: 1.2rem;
+        bottom: 50%;
+        left: 3.75rem;
+      }
+    }
+    &--projects {
+      &:hover::after {
+        content: "projects"
+      }
+    }
+    &--about {
+      &:hover::after {
+        content: "about"
+      }
+    }
+    &--contact {
+      &:hover::after {
+        content: "contact"
+      }
+    }
   }
   
   &__icon {
