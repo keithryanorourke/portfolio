@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import "./RenderedAbout.scss"
 
 const RenderedAbout = ({nameInput, developerInput}) => {
   const [titleText, setTitleText] = useState("")
@@ -51,7 +52,7 @@ const RenderedAbout = ({nameInput, developerInput}) => {
     let delayTime = 0;
     delayTime += animateString(0, "Hello!", setTitleText, 50, 'p1')
     delayTime += animateString(delayTime+300, `My name is ${nameInput.value || "(Hm... Seems like someone left a field empty!)"} and I'm a ${developerInput.value || "(Hm... Seems like someone left a field empty!)"} web developer!`, setP1Text, 25, 'p2')
-    delayTime += animateString(delayTime+500, "My favorite thing about web development is the plethora of opportunities to collaborate with others. I'm very passionate about technology education and professional growth!", setP2Text, 25, 'p3')
+    delayTime += animateString(delayTime+500, "My favorite thing about web development is the plethora of opportunities to collaborate with others. I'm very passionate about technology, education and professional growth!", setP2Text, 25, 'p3')
     delayTime += animateString(delayTime+500, `By the way: I go by my middlename, ${middlename}! `, setP3Text, 25, 'span1')
     animateString(delayTime+500, '〜(￣▽￣〜)', setSpan1Text, 25, "")
 
@@ -65,22 +66,6 @@ const RenderedAbout = ({nameInput, developerInput}) => {
       }
     }
   }, [developerInput, nameInput])
-    
-    
-    
-  
-  
-  // const renderText = () => {
-  //   document.querySelector('.app').scroll(0, 0)
-  //   const splitName = nameInput.value.split(' ')
-  //   const middlename = (splitName.length === 3 ? splitName[1] || 'Ryan' : 'Ryan')
-  //   let delayTime = 0;
-  //   delayTime += animateString(0, "Hello!", setTitleText, 50, 'p1')
-  //   delayTime += animateString(delayTime+300, `My name is ${nameInput.value || "(Hm... Seems like someone left a field empty!)"} and I'm a ${developerInput.value || "(Hm... Seems like someone left a field empty!)"} web developer!`, setP1Text, 25, 'p2')
-  //   delayTime += animateString(delayTime+500, "My favorite thing about web development is the plethora of opportunities to collaborate with others. I'm very passionate about technology education and professional growth!", setP2Text, 25, 'p3')
-  //   delayTime += animateString(delayTime+500, `By the way: I go by my middlename, ${middlename}! `, setP3Text, 25, 'span1')
-  //   animateString(delayTime+500, '〜(￣▽￣〜)', setSpan1Text, 25, "")
-  // }
 
   return (
     <div className="about__codebox">

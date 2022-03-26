@@ -3,9 +3,6 @@ import "./AboutSection.scss"
 import SectionTitle from "../../components/SectionTitle/SectionTitle"
 import RenderedAbout from "../RenderedAbout/RenderedAbout"
 
-// Disable warning for incorrect usage of ${} since I'm intentionally trying to print ${} to the screen.
-/* eslint-disable no-template-curly-in-string */ 
-
   const AboutSection = () => {
   const [showText, setShowText] = useState(false)
   const [nameInput, setNameInput] = useState({value: "Keith Ryan O'Rourke", length: 19, style: {width: "19ch"}}) 
@@ -77,7 +74,7 @@ import RenderedAbout from "../RenderedAbout/RenderedAbout"
           <span className="about__code about__code--single-indent"><span className="about__declaration">if</span>{"(!bool) {"}</span>
           <span className="about__code about__code--double-indent">alert('Lies!!')</span>
           <span className="about__code about__code--single-indent">{"}"}<span className="about__declaration"> else</span> {"{"}</span>
-          <span className="about__code about__code--double-indent">console.<span className="about__function">log</span>{"(`Hello!\\nMy name is ${nameStr} and I am a ${typeStr} web developer!`)"}</span>
+          <span className="about__code about__code--double-indent">console.<span className="about__function">log</span>{`(\`Hello!\\nMy name is \${nameStr} and I am a \${typeStr} web developer!\`)`}</span>
           <span className="about__code about__code--single-indent">{"}"}</span>
           <span className="about__code">{"}"}</span>
         </div>
