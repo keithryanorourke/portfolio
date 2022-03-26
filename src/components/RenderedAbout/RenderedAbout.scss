@@ -1,0 +1,27 @@
+@use '../../styles/partials/animations' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.rendered-about {
+  @include codebox;
+
+  &__subtitle {
+    @include tablet {
+      font-size: 2rem;
+    }
+    padding: 0 0 1rem;
+    margin: 0;
+  }
+
+  &__copy {
+    margin: 0;
+    font-size: 1.25rem;
+    @include copy-sizing;
+    line-height: 170%;
+  }
+
+  &__face {
+    display: block;
+    text-align: center;
+  }
+}
