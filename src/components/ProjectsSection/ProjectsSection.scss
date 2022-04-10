@@ -3,36 +3,55 @@
 
 .projects {
 	@include section-padding;
-
+  
 	&__container {
+    position: relative;
 		display: flex;
+		flex-direction: column;
+		justify-content: center;
 		align-items: center;
 		gap: 1rem;
-		padding: 2rem;
-		width: 100%;
+		padding: 1rem;
+		background-color: #eeeeee;
+		border-radius: 0.5rem;
 		@include tablet {
+			width: fit-content;
+      padding: 2rem;
 		}
 	}
 
+	&__button-container {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+	}
+
 	&__button {
-		background-color: #eeeeee;
-		opacity: 0.5;
+    padding: 0;
+		margin: 0;
+		opacity: 0;
+		background-color: #333333;
 		outline: none;
 		border: none;
 		clip-path: polygon(50% 0, 100% 100%, 0 100%);
 		width: 1.5rem;
 		height: 1.5rem;
-
+		bottom: -2rem;
+    
 		&--left {
-			transform: rotate(-90deg);
+      transform: rotate(-90deg);
 		}
-
+    
 		&--right {
-			transform: rotate(90deg);
+      transform: rotate(90deg);
 		}
-
-		&:hover {
-			opacity: 1;
+    
+		&--enabled {
+      opacity: 0.7;
+      cursor: pointer;
+			&:hover {
+				opacity: 1;
+			}
 		}
 	}
 }
