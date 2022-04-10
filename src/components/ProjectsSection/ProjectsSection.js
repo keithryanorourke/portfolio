@@ -3,8 +3,10 @@ import liftBookThumbnail from "../../assets/images/liftBookCapture.png";
 import shapeMakerthumbnail from "../../assets/images/ShapeMakerCapture.png";
 import IndividualProject from "../IndividualProject/IndividualProject";
 import SectionTitle from "../SectionTitle/SectionTitle";
+import { useState } from "react";
 
 const ProjectsSection = () => {
+	const [projectIndex, setProjectIndex] = useState(0);
 	const projectsArray = [
 		<IndividualProject
 			thumbnail={liftBookThumbnail}
@@ -29,7 +31,13 @@ const ProjectsSection = () => {
 		<section id="projects" className="projects">
 			<SectionTitle title="PROJECTS" />
 			<div className="projects__container">
-				{projectsArray.map((project) => project)}
+				{projectIndex > 0 ? (
+					<button className="projects__button projects__button--left" onClick={() => setProjectIndex(projectIndex - 1)}></button>
+				) : null}
+				{projectsArray[projectIndex]}
+				{projectIndex < projectsArray.length - 1 ? (
+					<button className="projects__button projects__button--right" onClick={() => setProjectIndex(projectIndex + 1)}></button>
+				) : null}
 			</div>
 		</section>
 	);

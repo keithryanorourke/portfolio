@@ -2,17 +2,37 @@
 @use "../../styles/partials/variables" as *;
 
 .projects {
-  @include section-padding;
+	@include section-padding;
 
-  &__container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 2rem;
-    width: 100%;
-    overflow-y: auto;
-    @include tablet {
-      flex-direction: row;
-    }
-  }
+	&__container {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		padding: 2rem;
+		width: 100%;
+		@include tablet {
+		}
+	}
+
+	&__button {
+		background-color: #eeeeee;
+		opacity: 0.5;
+		outline: none;
+		border: none;
+		clip-path: polygon(50% 0, 100% 100%, 0 100%);
+		width: 1.5rem;
+		height: 1.5rem;
+
+		&--left {
+			transform: rotate(-90deg);
+		}
+
+		&--right {
+			transform: rotate(90deg);
+		}
+
+		&:hover {
+			opacity: 1;
+		}
+	}
 }
