@@ -17,6 +17,7 @@ const ProjectsSection = () => {
       github="https://github.com/keithryanorourke/liftBook"
       stack={['html', 'css', 'scss', 'js', 'react', 'nodejs', 'express', 'mysql', 'aws', 'nginx', 'linux']}
 			key="liftbook"
+      first={true}
 		/>,
 		<IndividualProject
 			thumbnail={shapeMakerthumbnail}

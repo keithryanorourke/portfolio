@@ -8,14 +8,17 @@
     position: relative;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
 		gap: 1rem;
 		padding: 1rem;
 		background-color: #eeeeee;
 		border-radius: 0.5rem;
+    height: 80%;
 		@include tablet {
-			width: fit-content;
+      height: 85%;
+      width: 100%;
+      margin: 0 auto;
       padding: 2rem;
 		}
 	}
