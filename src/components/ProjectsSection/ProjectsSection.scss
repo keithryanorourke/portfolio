@@ -3,9 +3,9 @@
 
 .projects {
 	@include section-padding;
-  
+
 	&__container {
-    position: relative;
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -14,12 +14,12 @@
 		padding: 1rem;
 		background-color: #eeeeee;
 		border-radius: 0.5rem;
-    height: 80%;
+		height: 80%;
 		@include tablet {
-      height: 85%;
-      width: 100%;
-      margin: 0 auto;
-      padding: 2rem;
+			height: 85%;
+			width: 100%;
+			margin: 0 auto;
+			padding: 2rem;
 		}
 	}
 
@@ -30,7 +30,7 @@
 	}
 
 	&__button {
-    padding: 0;
+		padding: 0;
 		margin: 0;
 		opacity: 0;
 		background-color: #333333;
@@ -40,18 +40,18 @@
 		width: 1.5rem;
 		height: 1.5rem;
 		bottom: -2rem;
-    
+
 		&--left {
-      transform: rotate(-90deg);
+			transform: rotate(-90deg);
 		}
-    
+
 		&--right {
-      transform: rotate(90deg);
+			transform: rotate(90deg);
 		}
-    
+
 		&--enabled {
-      opacity: 0.7;
-      cursor: pointer;
+			opacity: 0.7;
+			cursor: pointer;
 			&:hover {
 				opacity: 1;
 			}

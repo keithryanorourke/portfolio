@@ -1,18 +1,22 @@
-*, *::before, *::after {
-  box-sizing: border-box;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  color: #fff;
+	margin: 0;
+	color: #fff;
 }
 
 main {
-  position: relative;
-  z-index: 2;
-  width: 100%;
+	position: relative;
+	z-index: 2;
+	width: 100%;
 }
 
-html, body, #root {
-  height: 100%;
+html,
+body,
+#root {
+	height: 100%;
 }

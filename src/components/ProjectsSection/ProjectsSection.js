@@ -14,10 +14,22 @@ const ProjectsSection = () => {
 			name="liftBook"
 			badge="Full Stack"
 			description="liftBook is a full stack workout tracker! Customizable and powerful, liftBook is made for trainees of all levels!"
-      github="https://github.com/keithryanorourke/liftBook"
-      stack={['html', 'css', 'scss', 'js', 'react', 'nodejs', 'express', 'mysql', 'aws', 'nginx', 'linux']}
+			github="https://github.com/keithryanorourke/liftBook"
+			stack={[
+				"html",
+				"css",
+				"scss",
+				"js",
+				"react",
+				"nodejs",
+				"express",
+				"mysql",
+				"aws",
+				"nginx",
+				"linux",
+			]}
 			key="liftbook"
-      first={true}
+			first={true}
 		/>,
 		<IndividualProject
 			thumbnail={shapeMakerthumbnail}
@@ -25,8 +37,8 @@ const ProjectsSection = () => {
 			name="ShapeMaker"
 			badge="Front End"
 			description="ShapeMaker is a fun, relaxing, turn your brain off and just make some shapes drawing app!"
-      github="https://github.com/keithryanorourke/shapeMaker"
-      stack={['html', 'css', 'scss', 'js']}
+			github="https://github.com/keithryanorourke/shapeMaker"
+			stack={["html", "css", "scss", "js"]}
 			key="ShapeMaker"
 			last="true"
 		/>,
