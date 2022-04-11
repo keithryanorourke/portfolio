@@ -1,77 +1,77 @@
-@use './variables' as *;
+@use "./variables" as *;
 
 @mixin tablet {
-  @media (min-width: 768px) {
-    @content;
-  }
+	@media (min-width: 768px) {
+		@content;
+	}
 }
 
 @mixin desktop {
-  @media (min-width: 1280px) {
-    @content;
-  }
+	@media (min-width: 1280px) {
+		@content;
+	}
 }
 
 @mixin rotated-phone {
-  @media (orientation: landscape) {
-    @media (max-height: 400px) {
-      @content;
-    }
-  }
+	@media (orientation: landscape) {
+		@media (max-height: 400px) {
+			@content;
+		}
+	}
 }
 
 @mixin section-padding {
-    padding: 0 1.5rem 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-    @include tablet {
-      flex-direction: row;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 0 3rem 0 calc(3rem + 83px);
-    }
-    @include desktop {
-      padding: 0 10% 0 calc(10% + 81px);
-    }
-    @include rotated-phone() {
-      min-height: 100vh;
-      height: fit-content;
-      padding: 5rem 3rem 2rem;
-    }
-  }
+	padding: 0 1.5rem 0;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	@include tablet {
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-start;
+		padding: 0 3rem 0 calc(3rem + 83px);
+	}
+	@include desktop {
+		padding: 0 10% 0 calc(10% + 81px);
+	}
+	@include rotated-phone() {
+		min-height: 100vh;
+		height: fit-content;
+		padding: 5rem 3rem 2rem;
+	}
+}
 
 @mixin copy-sizing {
-  font-size: 1rem;
-  @include tablet {
-    font-size: 1.25rem;
-  }
-  @include desktop {
-    font-size: 1.5rem;
-  }
+	font-size: 1rem;
+	@include tablet {
+		font-size: 1.25rem;
+	}
+	@include desktop {
+		font-size: 1.5rem;
+	}
 }
 
 @mixin codebox {
-  color: #333;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  height: fit-content;
-  background-color: #eee;
-  font-family: monospace;
-  font-size: .8125rem;
-  padding: 0.75rem 1rem;
-  border-radius: .5rem;
-  border: 1px solid #ccc;
-  box-shadow: $darkshadow1;
-  @include tablet {
-    font-size: 1.1rem;
-    padding: 1.25rem;
-  }
-  @include desktop {
-    padding: 1.75rem;
-    font-size: 1.3rem;
-  }
+	color: #333;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	height: fit-content;
+	background-color: #eee;
+	font-family: monospace;
+	font-size: 0.8125rem;
+	padding: 0.75rem 1rem;
+	border-radius: 0.5rem;
+	border: 1px solid #ccc;
+	box-shadow: $darkshadow1;
+	@include tablet {
+		font-size: 1.1rem;
+		padding: 1.25rem;
+	}
+	@include desktop {
+		padding: 1.75rem;
+		font-size: 1.3rem;
+	}
 }

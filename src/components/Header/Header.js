@@ -11,8 +11,8 @@ const Header = () => {
       </div>
       <nav className="header__nav">
         <ul className="header__nav-list">
-          <li className="header__nav-item"><a href="#about" className="header__nav-link header__nav-link--projects"><img src={personIcon} alt="Outline of a person" className="header__icon" /></a></li>
-          <li className="header__nav-item"><a href="#projects" className="header__nav-link header__nav-link--about"><img src={workIcon} alt="Outline of a brief case" className="header__icon" /></a></li>
+          <li className="header__nav-item"><a href="#about" className="header__nav-link header__nav-link--about"><img src={personIcon} alt="Outline of a person" className="header__icon" /></a></li>
+          <li className="header__nav-item"><a href="#projects" className="header__nav-link header__nav-link--projects"><img src={workIcon} alt="Outline of a brief case" className="header__icon" /></a></li>
           <li className="header__nav-item"><a href="#contact" className="header__nav-link header__nav-link--contact"><img src={emailIcon} alt="Outline of an envelope" className="header__icon" /></a></li>
         </ul>
       </nav>
