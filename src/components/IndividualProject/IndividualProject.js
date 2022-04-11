@@ -37,20 +37,18 @@ const IndividualProject = ({
 						"single-project" +
 						(first ? " single-project--first" : "")
 					}>
-					<section className="single-project__top">
-						<a
-							href={link}
-							target="_blank"
-							rel="noreferrer"
-							className="single-project__title">
-							{name}
-						</a>
+					<a
+						href={link}
+						target="_blank"
+						rel="noreferrer"
+						className="single-project__link">
+						<h3 className="single-project__title">{name}</h3>
 						<img
 							src={thumbnail}
 							alt=""
 							className="single-project__thumbnail"
 						/>
-					</section>
+					</a>
 					<p className="single-project__copy">{description}</p>
 					<section className="tech-stack">
 						<h4 className="tech-stack__title">Tech Stack</h4>
