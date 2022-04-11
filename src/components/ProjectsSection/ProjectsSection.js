@@ -13,7 +13,7 @@ const ProjectsSection = () => {
 			link="https://liftbook.ca"
 			name="liftBook"
 			badge="Full Stack"
-			description="liftBook is a full stack workout tracker! Customizable and powerful, liftBook is intended for trainees of all levels!"
+			description="liftBook is a full stack workout tracker! Customizable and powerful, liftBook is made for trainees of all levels!"
       github="https://github.com/keithryanorourke/liftBook"
       stack={['html', 'css', 'scss', 'js', 'react', 'nodejs', 'express', 'mysql', 'aws', 'nginx', 'linux']}
 			key="liftbook"
