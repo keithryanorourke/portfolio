@@ -32,13 +32,18 @@ const IndividualProject = ({
 				<img src={githubIcon} alt="GitHub icon" />
 			</a>
 			<div className="overflow-container">
-				<img className="single-project__thumbnail" src={thumbnail} alt={`${name} preview`} />
-				<div className="single-project__overlay"></div>
 				<article
 					className={
 						"single-project" +
 						(first ? " single-project--first" : "")
 					}>
+					<img
+						className="single-project__thumbnail"
+						src={thumbnail}
+						alt={`${name} preview`}
+					/>
+					<div className="single-project__overlay"></div>
+					<div className="single-project__content-container">
 					<a
 						href={link}
 						target="_blank"
@@ -46,18 +51,19 @@ const IndividualProject = ({
 						className="single-project__link">
 						<h3 className="single-project__title">{name}</h3>
 					</a>
-					<p className="single-project__copy">{description}</p>
-					<section className="tech-stack">
-						<h4 className="tech-stack__title">Tech Stack</h4>
-						<div className="tech-stack__container">
-							{stack.map((tool) => (
-								<img
-									className="tech-stack__icon"
-									src={`https://skillicons.dev/icons?i=${tool}`}
-									alt={`${tool} icon`}></img>
-							))}
-						</div>
-					</section>
+						<p className="single-project__copy">{description}</p>
+						<section className="tech-stack">
+							<h4 className="tech-stack__title">Tech Stack</h4>
+							<div className="tech-stack__container">
+								{stack.map((tool) => (
+									<img
+										className="tech-stack__icon"
+										src={`https://skillicons.dev/icons?i=${tool}`}
+										alt={`${tool} icon`}></img>
+								))}
+							</div>
+						</section>
+					</div>
 				</article>
 			</div>
 		</>
