@@ -10,16 +10,14 @@
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: center;
+		margin-top: 1rem;
 		gap: 1rem;
-		padding: 1rem;
-		background-color: #eeeeee;
 		border-radius: 0.5rem;
-		height: 80%;
+		height: 60%;
 		@include tablet {
-			height: 85%;
+			height: 75%;
 			width: 100%;
 			margin: 0 auto;
-			padding: 2rem;
 		}
 	}
 
@@ -31,9 +29,9 @@
 
 	&__button {
 		padding: 0;
-		margin: 0;
+		margin: 1rem 0 0 0;
 		opacity: 0;
-		background-color: #333333;
+		background-color: #eeeeee;
 		outline: none;
 		border: none;
 		clip-path: polygon(50% 0, 100% 100%, 0 100%);
