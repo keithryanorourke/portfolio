@@ -32,6 +32,8 @@ const IndividualProject = ({
 				<img src={githubIcon} alt="GitHub icon" />
 			</a>
 			<div className="overflow-container">
+				<img className="single-project__thumbnail" src={thumbnail} alt={`${name} preview`} />
+				<div className="single-project__overlay"></div>
 				<article
 					className={
 						"single-project" +
@@ -43,11 +45,6 @@ const IndividualProject = ({
 						rel="noreferrer"
 						className="single-project__link">
 						<h3 className="single-project__title">{name}</h3>
-						<img
-							src={thumbnail}
-							alt=""
-							className="single-project__thumbnail"
-						/>
 					</a>
 					<p className="single-project__copy">{description}</p>
 					<section className="tech-stack">
