@@ -37,7 +37,7 @@
 		z-index: 5;
 		top: 0rem;
 		left: 0rem;
-		transform: translate(-10%, -50%);
+		transform: translate(-5%, -50%);
 		padding: 0.25rem 0.375rem;
 		border-radius: 0.125rem;
 		box-shadow: $darkshadow1;
@@ -67,7 +67,7 @@
 		z-index: 5;
 		top: 0;
 		right: 0;
-		transform: translate(50%, -50%);
+		transform: translate(12.5%, -50%);
 		width: 2rem;
 		height: 2rem;
 		transition: transform 0.1s;
@@ -77,6 +77,7 @@
 		@include tablet {
 			width: 2.5rem;
 			height: 2.5rem;
+			transform: translate(50%, -50%);
 		}
 		@include desktop {
 			width: 3.25rem;
