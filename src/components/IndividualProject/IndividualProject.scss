@@ -157,12 +157,13 @@
 	padding: 0.5rem 1rem 1rem 1rem;
 
 	&__title {
-		color: #000000;
 		margin: 0;
-		text-align: center;
 		font-size: 1.25rem;
 		border-bottom: 2px solid #aaaaaa;
 		padding-bottom: 0.25rem;
+		@include tablet {
+			text-align: center;
+		}
 	}
 
 	&__container {
