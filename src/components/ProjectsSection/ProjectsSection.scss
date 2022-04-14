@@ -31,21 +31,16 @@
 		padding: 0;
 		margin: 1rem 0 0 0;
 		opacity: 0;
-		background-color: #9512d1;
+		width: 2.5rem;
+		height: 2.5rem;
+		background-color: #eeeeee;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		outline: none;
 		border: none;
-		clip-path: polygon(50% 0, 100% 100%, 0 100%);
-		width: 1.5rem;
-		height: 1.5rem;
-		bottom: -2rem;
-
-		&--left {
-			transform: rotate(-90deg);
-		}
-
-		&--right {
-			transform: rotate(90deg);
-		}
+		border-bottom: 0.25rem solid #aaaaaa;
+		border-radius: 0.5rem;
 
 		&--enabled {
 			opacity: 1;
@@ -56,6 +51,21 @@
 					opacity: 1;
 				}
 			}
+		}
+	}
+
+	&__arrow {
+		width: 50%;
+		height: 1.5rem;
+		clip-path: polygon(50% 0, 100% 100%, 0 100%);
+		background-color: #9512d1;
+
+		&--left {
+			transform: rotate(-90deg);
+		}
+
+		&--right {
+			transform: rotate(90deg);
 		}
 	}
 }
