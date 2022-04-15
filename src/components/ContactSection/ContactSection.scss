@@ -9,9 +9,7 @@
 		padding: 1rem;
 		border-radius: 0.5rem;
 		@include tablet {
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
+			@include flex-between-center;
 			min-height: 15.75rem;
 		}
 		@include desktop {
@@ -53,9 +51,7 @@
 
 	&__link {
 		box-shadow: $darkshadow1;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
+		@include flex-between-center;
 		padding: 0.5rem;
 		border-radius: 0.5rem;
 		background-color: $primary-color;

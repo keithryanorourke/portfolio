@@ -6,10 +6,8 @@
 
 	&__container {
 		position: relative;
-		display: flex;
+		@include flex-between-center;
 		flex-direction: column;
-		justify-content: space-between;
-		align-items: center;
 		margin-top: 1rem;
 		gap: 1rem;
 		border-radius: 0.5rem;
