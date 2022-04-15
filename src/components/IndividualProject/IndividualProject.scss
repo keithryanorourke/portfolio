@@ -39,6 +39,7 @@
 	}
 
 	&__badge {
+		@include copy-sizing;
 		position: absolute;
 		color: #ffffff;
 		z-index: 5;
@@ -50,11 +51,9 @@
 		box-shadow: $darkshadow1;
 		@include tablet {
 			transform: translate(-20%, -50%);
-			font-size: 1.25rem;
 			padding: 0.5rem;
 		}
 		@include desktop {
-			font-size: 1.5rem;
 		}
 
 		&--fullstack {
@@ -136,6 +135,7 @@
 	}
 
 	&__copy {
+		@include copy-sizing;
 		display: flex;
 		align-items: center;
 		padding: 0.75rem 1rem;
@@ -143,11 +143,9 @@
 		margin: 1rem 0 0.5rem;
 		text-align: center;
 		@include tablet {
-			font-size: 1.25rem;
 			padding: 1rem;
 		}
 		@include desktop {
-			font-size: 1.5rem;
 		}
 	}
 }
