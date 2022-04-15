@@ -55,6 +55,7 @@
 
 @mixin codebox {
 	@include copy-sizing;
+	width: 100%;
 	color: #333;
 	margin: 0 auto;
 	display: flex;
