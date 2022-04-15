@@ -44,7 +44,7 @@
 }
 
 @mixin copy-sizing {
-	font-size: .75rem;
+	font-size: .8125rem;
 	@include tablet {
 		font-size: 1rem;
 	}
