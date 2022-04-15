@@ -31,16 +31,16 @@
 	}
 
 	&__declaration {
-		color: rgb(1, 81, 173);
+		color: $code-color1;
 	}
 
 	&__function {
-		color: rgb(207, 17, 17);
+		color: $code-color3;
 	}
 
 	&__input-wrapper {
 		display: inline-block;
-		color: rgb(53, 110, 66);
+		color: $code-color2;
 	}
 
 	&__input {
@@ -70,7 +70,7 @@
 		}
 
 		&--return {
-			color: rgb(1, 81, 173);
+			color: $code-color1;
 		}
 	}
 
@@ -98,7 +98,7 @@
 		font-size: 1.5rem;
 		align-self: flex-end;
 		padding: 0.375rem 0.75rem;
-		background-color: #fff;
+		background-color: $font-color2;
 		border: none;
 		border-bottom: 4px solid #aaa;
 		box-shadow: $darkshadow1;

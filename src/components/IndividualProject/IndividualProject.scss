@@ -41,7 +41,7 @@
 	&__badge {
 		@include copy-sizing;
 		position: absolute;
-		color: #ffffff;
+		color: $font-color2;
 		z-index: 5;
 		top: 0rem;
 		left: 0rem;
@@ -123,7 +123,7 @@
 		font-weight: 600;
 		margin: 0;
 		padding: 0.5rem 1rem;
-		background-color: #eeeeee;
+		background-color: $primary-color;
 		color: #000000;
 		border-bottom: 0.125rem solid #55555577;
 		box-shadow: $darkshadow1;
@@ -139,7 +139,7 @@
 		display: flex;
 		align-items: center;
 		padding: 0.75rem 1rem;
-		background-color: #eeeeee;
+		background-color: $primary-color;
 		margin: 1rem 0 0.5rem;
 		text-align: center;
 		@include tablet {
@@ -151,7 +151,7 @@
 }
 
 .tech-stack {
-	background-color: #eeeeee;
+	background-color: $primary-color;
 	padding: 0.5rem 1rem 1rem 1rem;
 
 	&__title {
