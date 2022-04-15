@@ -1,3 +1,5 @@
+@use "../partials/variables" as *;
+
 *,
 *::before,
 *::after {
@@ -6,6 +8,7 @@
 
 body {
 	margin: 0;
+	color: $font-color1
 }
 
 main {

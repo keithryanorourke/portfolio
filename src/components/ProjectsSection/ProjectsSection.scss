@@ -6,10 +6,8 @@
 
 	&__container {
 		position: relative;
-		display: flex;
+		@include flex-between-center;
 		flex-direction: column;
-		justify-content: space-between;
-		align-items: center;
 		margin-top: 1rem;
 		gap: 1rem;
 		border-radius: 0.5rem;
@@ -33,7 +31,7 @@
 		opacity: 0;
 		width: 2.5rem;
 		height: 2.5rem;
-		background-color: #eeeeee;
+		background-color: $primary-color;
 		display: flex;
 		justify-content: center;
 		align-items: center;

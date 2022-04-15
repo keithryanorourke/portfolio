@@ -1,7 +1,8 @@
 @use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
 .title {
-	color: #ffffff;
+	color: $font-color2;
 	background-color: #680696cc;
 	padding: 0.75rem 1rem;
 	font-family: "Courier New", Courier, monospace;
