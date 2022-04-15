@@ -1,17 +1,23 @@
 @use "../../styles/partials/mixins" as *;
 
 .title {
+	color: #ffffff;
+	background-color: #680696cc;
+	padding: 0.75rem 1rem;
 	font-family: "Courier New", Courier, monospace;
 	margin: 0;
 	margin-bottom: 1rem;
+	border-radius: 0.5rem;
 	font-size: 2rem;
 	line-height: 100%;
+	align-self: flex-end;
 	@include tablet {
 		margin-bottom: 0;
 		margin-right: 4rem;
-		word-break: break-all;
-		width: 1rem;
+		word-break: break-word;
+		width: 3.5rem;
 		font-size: 2.25rem;
+		align-self: center;
 	}
 	@include desktop {
 		margin-bottom: 0;

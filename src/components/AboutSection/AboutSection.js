@@ -56,10 +56,7 @@ const AboutSection = () => {
 	};
 	return (
 		<section id="about" className="about">
-			<div className="about__title-container">
-				<SectionTitle title="ABOUT" />
-				<SectionTitle title="ME" />
-			</div>
+			<SectionTitle title="ABOUT ME" />
 			{!showText ? (
 				<form onSubmit={submitHandler} className="about__codebox">
 					<label className="about__code-label">

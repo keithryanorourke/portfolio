@@ -11,7 +11,7 @@ At this point in time my portfolio is a front-end only project, though I intend 
 ## Acknowledgements
 
  - README made using [readme.so](https://readme.so) made by [Katherine Peterson](https://katherinempeterson.com/)
- - Tech Stack icons provided by [tadnpfun's skill-icons repo](https://github.com/tandpfun/skill-icons#icons-list)
+ - Tech Stack icons provided by [tandpfun's skill-icons repo](https://github.com/tandpfun/skill-icons#icons-list)
  - favicon made using [Favicon Generator](https://favicon.io) made by [John Sorrentino](https://twitter.com/johnsorrentino)
  - UI icons provided by [Google's material design library](https://fonts.google.com/icons)
 
