@@ -1,0 +1,44 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/animations" as *;
+
+.tech-stack {
+	background-color: $primary-color;
+	padding: 0.75rem 1rem 0 1rem;
+
+	&__title {
+		margin: 0;
+		font-size: 1.25rem;
+		border-bottom: 2px solid #aaaaaa;
+		padding-bottom: 0.25rem;
+		@include tablet {
+			text-align: center;
+		}
+	}
+
+	&__container {
+		padding-top: 1rem;
+		display: flex;
+		overflow-x: auto;
+		width: 100%;
+		gap: 0.5rem;
+		justify-content: center;
+		flex-wrap: wrap;
+		@include tablet {
+			gap: 0.75rem;
+		}
+		@include desktop {
+			gap: 1rem;
+		}
+	}
+
+	&__icon {
+		width: 2rem;
+		@include tablet {
+			width: 2.5rem;
+		}
+		@include desktop {
+			width: 3rem;
+		}
+	}
+}
