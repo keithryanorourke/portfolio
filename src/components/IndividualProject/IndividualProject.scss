@@ -69,6 +69,8 @@
 	}
 
 	&__github {
+		border-radius: 50%;
+		overflow: hidden;
 		position: absolute;
 		display: flex;
 		z-index: 5;
@@ -78,13 +80,16 @@
 		width: 2rem;
 		height: 2rem;
 		transition: transform 0.1s;
-		&:hover {
-			transform: translate(50%, -50%) scale(1.1);
+		&:hover{
+			transform: translate(12.5%, -50%) scale(1.1);
 		}
 		@include tablet {
 			width: 2.5rem;
 			height: 2.5rem;
 			transform: translate(50%, -50%);
+			&:hover {
+				transform: translate(50%, -50%) scale(1.1);
+			}
 		}
 		@include desktop {
 			width: 3.25rem;
