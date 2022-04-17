@@ -1,3 +1,5 @@
+import "./TechStack.scss";
+
 const TechStack = ({ stack }) => {
 	return (
 		<section className="tech-stack">
