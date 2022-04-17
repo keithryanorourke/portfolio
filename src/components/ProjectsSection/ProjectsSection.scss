@@ -32,24 +32,12 @@
 		opacity: 0;
 		width: 2.5rem;
 		height: 2.5rem;
-		background-color: #cccccc;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		outline: none;
-		border: none;
-		border-bottom: 0.25rem solid #aaaaaa;
-		border-radius: 0.5rem;
-
 		&--enabled {
 			opacity: 1;
-			cursor: pointer;
-			@include desktop {
-				opacity: 0.7;
-				&:hover {
-					opacity: 1;
-				}
-			}
+			@include button-styles;
 		}
 	}
 
