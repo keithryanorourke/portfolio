@@ -7,6 +7,7 @@ const TechStack = ({ stack }) => {
 			<div className="tech-stack__container">
 				{stack.map((tool) => (
 					<img
+            key={tool}
 						className="tech-stack__icon"
 						src={`https://skillicons.dev/icons?i=${tool}`}
 						alt={`${tool} icon`}></img>
