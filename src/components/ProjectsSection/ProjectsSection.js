@@ -58,7 +58,9 @@ const ProjectsSection = () => {
 						disabled={projectIndex ? false : true}
 						onClick={() =>
 							setProjectIndex(projectIndex - 1)
-						}></button>
+						}>
+							<div className="projects__arrow projects__arrow--left"></div>
+						</button>
 					<button
 						className={
 							"projects__button projects__button--right" +
@@ -73,7 +75,9 @@ const ProjectsSection = () => {
 						}
 						onClick={() =>
 							setProjectIndex(projectIndex + 1)
-						}></button>
+						}>
+							<div className="projects__arrow projects__arrow--right"></div>
+						</button>
 				</div>
 			</div>
 		</section>
