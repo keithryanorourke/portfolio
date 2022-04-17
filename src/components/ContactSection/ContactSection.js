@@ -10,8 +10,8 @@ const ContactSection = () => {
 			<SectionTitle title="CONTACT" />
 			<div className="contact__container">
 				<p className="contact__copy">
-					Please feel free to reach out to me! I am not currently
-					looking for work, but I'm always excited to collaborate on
+					Please feel free to reach out to me! I am currently seeking
+					new work opportunities. I'm also always excited to collaborate on
 					personal projects, or even to just talk about development
 					and coding! ╰(*°▽°*)╯
 				</p>
@@ -26,7 +26,7 @@ const ContactSection = () => {
 							alt="GitHub icon"
 							className="contact__icon"
 						/>
-						Visit my LinkedIn!
+						Connect on LinkedIn!
 					</a>
 					<a
 						href="https://github.com/keithryanorourke"
