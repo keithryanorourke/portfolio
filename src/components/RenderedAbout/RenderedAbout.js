@@ -9,7 +9,16 @@ const RenderedAbout = ({ nameInput, developerInput }) => {
 	const [span1Text, setSpan1Text] = useState("");
 	const [textCursor, setTextCursor] = useState("title");
 
-	/**
+	
+
+	useEffect(() => {
+		// Create timer arrays on component mount
+		const timeOutArray = [];
+		const intervalArray = [];
+		console.log(`Ah, I suppose you actually expected the RUN button to console log something, since it's written into the function and all... Well, here you go!`)
+		console.log(`Hello!\nMy name is ${nameInput.value} and I am a ${developerInput.value} web developer!`)
+
+		/**
 	 *
 	 * @param {string} initialState
 	 * @param {string} content
@@ -18,12 +27,6 @@ const RenderedAbout = ({ nameInput, developerInput }) => {
 	 * @param {string} nextCursor
 	 * @returns {number} time in ms to complete animation
 	 */
-
-	useEffect(() => {
-		// Create timer arrays on component mount
-		const timeOutArray = [];
-		const intervalArray = [];
-
 		const animateString = (
 			delayTime,
 			content,
@@ -33,7 +36,6 @@ const RenderedAbout = ({ nameInput, developerInput }) => {
 		) => {
 			let newString = "";
 			let i = 0;
-			console.log(delayTime, content, i, nextCursor, content.length);
 			timeOutArray.push(
 				setTimeout(() => {
 					const animationTimer = setInterval(() => {
