@@ -54,8 +54,6 @@
 			transform: translate(-20%, -50%);
 			padding: 0.5rem;
 		}
-		@include desktop {
-		}
 
 		&--fullstack {
 			background: linear-gradient(90deg, #1a72e6, #8501bd);
