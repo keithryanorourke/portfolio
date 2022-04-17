@@ -36,7 +36,7 @@
 		width: 100%;
 		height: 100%;
 		z-index: 0;
-		background-color: #33333344;
+		background-color: #22222266;
 	}
 
 	&__badge {
@@ -80,7 +80,7 @@
 		width: 2rem;
 		height: 2rem;
 		transition: transform 0.1s;
-		&:hover{
+		&:hover {
 			transform: translate(12.5%, -50%) scale(1.1);
 		}
 		@include tablet {
@@ -127,7 +127,6 @@
 		margin: 0;
 		padding: 0.5rem 1rem;
 		background-color: $primary-color;
-		color: #000000;
 		border-bottom: 0.125rem solid #55555577;
 		box-shadow: $darkshadow1;
 		text-decoration: none;
@@ -142,13 +141,15 @@
 		display: flex;
 		align-items: center;
 		padding: 0.75rem 1rem;
-		background-color: $primary-color;
+		background-color: #00000088;
+		color: $font-color2;
 		margin: 1rem 0 0.5rem;
 		text-align: center;
+		align-self: center;
+		width: 60%;
+		border-radius: 0.5rem;
 		@include tablet {
-			padding: 1rem;
-		}
-		@include desktop {
+			padding: 1.25rem;
 		}
 	}
 }
