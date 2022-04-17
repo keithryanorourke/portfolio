@@ -1,4 +1,5 @@
 import "./IndividualProject.scss";
+import TechStack from "../TechStack/TechStack";
 import githubIcon from "../../assets/icons/github-icon.png";
 
 const IndividualProject = ({
@@ -29,7 +30,7 @@ const IndividualProject = ({
 				className="single-project__github"
 				target="_blank"
 				rel="noreferrer">
-				<img src={githubIcon} alt="GitHub icon" />
+				<img src="https://skillicons.dev/icons?i=github" alt="GitHub icon" />
 			</a>
 			<div className="overflow-container">
 				<article
@@ -52,17 +53,7 @@ const IndividualProject = ({
 						<h3 className="single-project__title">{name}</h3>
 					</a>
 						<p className="single-project__copy">{description}</p>
-						<section className="tech-stack">
-							<h4 className="tech-stack__title">Tech Stack</h4>
-							<div className="tech-stack__container">
-								{stack.map((tool) => (
-									<img
-										className="tech-stack__icon"
-										src={`https://skillicons.dev/icons?i=${tool}`}
-										alt={`${tool} icon`}></img>
-								))}
-							</div>
-						</section>
+						<TechStack stack={stack} />
 					</div>
 				</article>
 			</div>
