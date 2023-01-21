@@ -30,9 +30,16 @@ const IndividualProject = ({
 				className="single-project__github"
 				target="_blank"
 				rel="noreferrer">
-				<img src="https://skillicons.dev/icons?i=github" alt="GitHub icon" />
+				<img
+					src="https://skillicons.dev/icons?i=github"
+					alt="GitHub icon"
+				/>
 			</a>
-			<div className="overflow-container">
+			<a
+				href={link}
+				target="_blank"
+				rel="noreferrer"
+				className="single-project__link">
 				<article
 					className={
 						"single-project" +
@@ -45,18 +52,12 @@ const IndividualProject = ({
 					/>
 					<div className="single-project__overlay"></div>
 					<div className="single-project__content-container">
-					<a
-						href={link}
-						target="_blank"
-						rel="noreferrer"
-						className="single-project__link">
 						<h3 className="single-project__title">{name}</h3>
-					</a>
 						<p className="single-project__copy">{description}</p>
 						<TechStack stack={stack} />
 					</div>
 				</article>
-			</div>
+			</a>
 		</>
 	);
 };
