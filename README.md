@@ -15,8 +15,3 @@ At this point in time my portfolio is a front-end only project, though I intend 
  - favicon made using [Favicon Generator](https://favicon.io) made by [John Sorrentino](https://twitter.com/johnsorrentino)
  - UI icons provided by [Google's material design library](https://fonts.google.com/icons)
 
-## Deployment
-
-This project is currently deployed using [Netlify](https://netlify.com)!
-You can visit my portfolio at [keithryanorourke.dev](https://keithryanorourke.dev).
-
